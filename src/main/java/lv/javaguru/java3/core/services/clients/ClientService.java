@@ -2,6 +2,8 @@ package lv.javaguru.java3.core.services.clients;
 
 import lv.javaguru.java3.core.domain.Client;
 
+import java.util.List;
+
 
 public interface ClientService {
 
@@ -10,5 +12,6 @@ public interface ClientService {
                   String newPassword);
 
     Client get(Long clientId);
+    List<Client> getAll();
 
 }

@@ -8,8 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-class UpdateClientCommandHandler
-        implements DomainCommandHandler<UpdateClientCommand, UpdateClientResult> {
+class UpdateClientCommandHandler implements DomainCommandHandler<UpdateClientCommand, UpdateClientResult> {
 
     @Autowired private ClientService clientService;
     @Autowired private ClientConverter clientConverter;

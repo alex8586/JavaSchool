@@ -5,6 +5,8 @@ import lv.javaguru.java3.core.domain.Client;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 class ClientServiceImpl implements ClientService {
 
@@ -27,5 +29,8 @@ class ClientServiceImpl implements ClientService {
     public Client get(Long clientId) {
         return clientDAO.getRequired(clientId);
     }
+
+    @Override
+    public List<Client> getAll() {return clientDAO.getAll();}
 
 }

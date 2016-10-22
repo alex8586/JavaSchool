@@ -1,17 +1,19 @@
 package lv.javaguru.java3.integrations.rest.impl;
 
-import lv.javaguru.java3.core.commands.clients.CreateClientCommand;
-import lv.javaguru.java3.core.commands.clients.CreateClientResult;
-import lv.javaguru.java3.core.commands.clients.GetClientCommand;
-import lv.javaguru.java3.core.commands.clients.GetClientResult;
+import lv.javaguru.java3.core.commands.clients.*;
 import lv.javaguru.java3.integrations.rest.dto.ClientDTO;
 import lv.javaguru.java3.core.services.CommandExecutor;
 import lv.javaguru.java3.integrations.rest.api.RESTResource;
 import lv.javaguru.java3.integrations.rest.api.ClientResource;
+import lv.javaguru.java3.integrations.rest.dto.ClientDTOBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import javax.ws.rs.*;
+
+import java.util.List;
 
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
@@ -38,6 +40,18 @@ public class ClientResourceImpl implements ClientResource {
         return result.getClient();
     }
 
+    @PUT
+    @Consumes(APPLICATION_JSON)
+    @Produces(APPLICATION_JSON)
+    @Path("/clients")
+    public ClientDTO update(ClientDTO clientDTO) {
+        UpdateClientCommand command = new UpdateClientCommand(
+                clientDTO.getId(),clientDTO.getLogin(), clientDTO.getPassword()
+        );
+        UpdateClientResult result = commandExecutor.execute(command);
+        return result.getClient();
+    }
+
     @GET
     @Consumes(APPLICATION_JSON)
     @Produces(APPLICATION_JSON)
@@ -48,4 +62,13 @@ public class ClientResourceImpl implements ClientResource {
         return result.getClient();
     }
 
+    @GET
+    @Consumes(APPLICATION_JSON)
+    @Produces(APPLICATION_JSON)
+    @Path("/clients/all")
+    public List<ClientDTO> get() {
+        GetAllClientsCommand command = new GetAllClientsCommand();
+        GetClientListResult result = commandExecutor.execute(command);
+        return result.getClients();
+    }
 }
