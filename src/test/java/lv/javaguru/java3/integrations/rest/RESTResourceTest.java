@@ -14,7 +14,7 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.boot.test.WebIntegrationTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-@Ignore
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebIntegrationTest(randomPort = true)
 @SpringApplicationConfiguration(classes = {Application.class})
@@ -24,7 +24,6 @@ public class RESTResourceTest {
     private int port;
 
     protected ClientResource clientResource;
-
 
     @Before
     public void init() {

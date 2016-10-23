@@ -66,7 +66,7 @@ public class ClientResourceImpl implements ClientResource {
     @Consumes(APPLICATION_JSON)
     @Produces(APPLICATION_JSON)
     @Path("/clients/all")
-    public List<ClientDTO> get() {
+    public List<ClientDTO> getAll() {
         GetAllClientsCommand command = new GetAllClientsCommand();
         GetClientListResult result = commandExecutor.execute(command);
         return result.getClients();

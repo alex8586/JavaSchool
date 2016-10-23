@@ -5,10 +5,8 @@ import lv.javaguru.java3.core.commands.DomainCommand;
 public class UpdateClientCommand implements DomainCommand<UpdateClientResult> {
 
     private Long clientId;
-
     private String login;
     private String password;
-
 
     public UpdateClientCommand(Long clientId,
                                String login,

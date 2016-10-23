@@ -4,6 +4,8 @@ import lv.javaguru.java3.integrations.rest.dto.ClientDTO;
 
 import javax.ws.rs.*;
 
+import java.util.List;
+
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
 @Path(RESTResource.API_PATH)
@@ -15,10 +17,21 @@ public interface ClientResource {
     @Path("/clients")
     ClientDTO create(ClientDTO clientDTO);
 
+    @PUT
+    @Consumes(APPLICATION_JSON)
+    @Produces(APPLICATION_JSON)
+    @Path("/clients")
+    ClientDTO update(ClientDTO clientDTO);
+
     @GET
     @Consumes(APPLICATION_JSON)
     @Produces(APPLICATION_JSON)
     @Path("/clients/{clientId}")
     ClientDTO get(@PathParam("clientId") Long clientId);
 
+    @GET
+    @Consumes(APPLICATION_JSON)
+    @Produces(APPLICATION_JSON)
+    @Path("/clients/all")
+    List<ClientDTO> getAll();
 }

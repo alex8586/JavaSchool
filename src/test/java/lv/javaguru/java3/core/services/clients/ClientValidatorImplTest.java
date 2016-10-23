@@ -13,7 +13,6 @@ public class ClientValidatorImplTest {
     private static final String LOGIN = "login";
     private static final String PASSWORD = "password";
 
-
     @Test
     public void validateShouldFailIfLoginIsNull() {
         validateShouldFail(null, PASSWORD, "Client login must not be null");

@@ -13,7 +13,6 @@ class UpdateClientCommandHandler implements DomainCommandHandler<UpdateClientCom
     @Autowired private ClientService clientService;
     @Autowired private ClientConverter clientConverter;
 
-
     @Override
     public UpdateClientResult execute(UpdateClientCommand command) {
         Client client = clientService.update(
