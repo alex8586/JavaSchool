@@ -54,6 +54,4 @@ public class ClientResourceImplTest extends RESTResourceTest {
         assertThat(updatedClient.getLogin(), is(clientDTO.getLogin()));
         assertThat(updatedClient.getPassword(), is(clientDTO.getPassword()));
     }
-
-
 }
