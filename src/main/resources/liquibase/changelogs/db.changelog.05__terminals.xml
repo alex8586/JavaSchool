@@ -8,38 +8,61 @@
 
 
     <changeSet id="1" author="alex" context="main">
-        <createTable tableName="terminal_types">
+        <createTable tableName="terminals">
             <column name="id" type="BIGINT" autoIncrement="true" startWith="1">
                 <constraints primaryKey="true" nullable="false" />
             </column>
 
-            <column name="name" type="varchar(30)">
-                <constraints  nullable="false"/>
+            <column name="vehicle_id" type="BIGINT">
+                <constraints  nullable="true"/>
             </column>
 
+            <column name="terminal_type" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
         </createTable>
     </changeSet>
 
     <changeSet id="2" author="alex" >
-        <insert tableName="terminal_types">
-            <column name="name">Trip Registrator</column>
+        <addForeignKeyConstraint baseColumnNames="vehicle_id"
+                                 baseTableName="terminals"
+                                 constraintName="fk_terminal_on_vehicle"
+                                 onDelete="RESTRICT"
+                                 onUpdate="RESTRICT"
+                                 referencedColumnNames="id"
+                                 referencedTableName="vehicles"/>
+    </changeSet>
+
+    <changeSet id="3" author="alex" >
+        <addForeignKeyConstraint baseColumnNames="terminal_type"
+                                 baseTableName="terminals"
+                                 constraintName="fk_terminal_on_terminal_type"
+                                 onDelete="RESTRICT"
+                                 onUpdate="RESTRICT"
+                                 referencedColumnNames="id"
+                                 referencedTableName="terminal_types"/>
+    </changeSet>
+
+    <changeSet id="4" author="alex">
+
+        <insert tableName="terminals">
+            <column name="vehicle_id">1</column>
+            <column name="terminal_type">1</column>
         </insert>
-        
-        <insert tableName="terminal_types">
-            <column name="name">Trip Control Checkout</column>
-        </insert>
-        
-        <insert tableName="terminal_types">
-            <column name="name">Vehicles Terminal</column>
+        <insert tableName="terminals">
+            <column name="vehicle_id">1</column>
+            <column name="terminal_type">3</column>
         </insert>
 
-        <insert tableName="terminal_types">
-            <column name="name">Outside Terminal</column>
+        <insert tableName="terminals">
+            <column name="vehicle_id">2</column>
+            <column name="terminal_type">1</column>
+        </insert>
+        <insert tableName="terminals">
+            <column name="vehicle_id">2</column>
+            <column name="terminal_type">3</column>
         </insert>
 
-        <insert tableName="terminal_types">
-            <column name="name">Office Terminal</column>
-        </insert>
     </changeSet>
 
 </databaseChangeLog>
