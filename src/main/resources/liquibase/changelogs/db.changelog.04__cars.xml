@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+
+    <changeSet id="1" author="algis" context="main">
+        <createTable tableName="cars">
+            <column name="id" type="BIGINT" autoIncrement="true" startWith="1">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+
+            <column name="vehicle_code" type="varchar(20)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+
+            <column name="route_id" type="BIGINT">
+                <constraints  nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2" author="algis" >
+        <addForeignKeyConstraint baseColumnNames="route_id"
+                                 baseTableName="cars"
+                                 constraintName="fk_route_of_car"
+                                 onDelete="RESTRICT"
+                                 onUpdate="RESTRICT"
+                                 referencedColumnNames="id"
+                                 referencedTableName="routes"/>
+    </changeSet>
+
+    <changeSet id="3" author="algis" context="main">
+
+        <insert tableName="cars">
+            <column name="vehicle_code" value="Abus-0001"/>
+            <column name="route_id" value ="1"/>
+        </insert>
+        <insert tableName="cars">
+            <column name="vehicle_code" value="Abus-0002"/>
+            <column name="route_id" value ="1"/>
+        </insert>
+        <insert tableName="cars">
+            <column name="vehicle_code" value="Bbus-B0001"/>
+            <column name="route_id" value ="2"/>
+        </insert>
+
+        <insert tableName="cars">
+            <column name="vehicle_code" value="Tram-T0001"/>
+            <column name="route_id" value ="6"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="4" author="algis" context="main">
+        <createSequence sequenceName="cars_seq" startValue="100"/>
+    </changeSet>
+
+
+</databaseChangeLog>
