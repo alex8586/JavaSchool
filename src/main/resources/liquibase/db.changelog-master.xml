@@ -12,6 +12,11 @@
     <include file="liquibase/changelogs/db.changelog.04__vehicles.xml"/>
     <include file="liquibase/changelogs/db.changelog.05__terminal_types.xml"/>
     <include file="liquibase/changelogs/db.changelog.06__terminals.xml"/>
+    <include file="liquibase/changelogs/db.changelog.07__authorisation_tokens.xml"/>
+    <include file="liquibase/changelogs/db.changelog.08__token_types.xml"/>
+    <include file="liquibase/changelogs/db.changelog.09__ticket_types.xml"/>
+    <include file="liquibase/changelogs/db.changelog.10__ticket_types_per_token.xml"/>
+    <include file="liquibase/changelogs/db.changelog.11__tickets.xml"/>
 
 
 </databaseChangeLog>
