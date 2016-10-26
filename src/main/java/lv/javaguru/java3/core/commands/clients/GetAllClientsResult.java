@@ -5,9 +5,9 @@ import lv.javaguru.java3.integrations.rest.dto.ClientDTO;
 
 import java.util.List;
 
-public class GetClientListResult implements DomainCommandResult {
+public class GetAllClientsResult implements DomainCommandResult {
     private List<ClientDTO> clients;
-    public GetClientListResult(List<ClientDTO> clients) {
+    public GetAllClientsResult(List<ClientDTO> clients) {
         this.clients = clients;
     }
     public List<ClientDTO> getClients() {

@@ -11,18 +11,18 @@ import java.util.List;
 
 @Component
 class GetAllClientsCommandHandler
-        implements DomainCommandHandler<GetAllClientsCommand, GetClientListResult> {
+        implements DomainCommandHandler<GetAllClientsCommand, GetAllClientsResult> {
 
     @Autowired private ClientService clientService;
     @Autowired private ClientConverter clientConverter;
 
 
     @Override
-    public GetClientListResult execute(GetAllClientsCommand command) {
+    public GetAllClientsResult execute(GetAllClientsCommand command) {
 
         List<Client> clients = clientService.getAll();
         List<ClientDTO> clientDTOs = clientConverter.convert(clients);
-        return new GetClientListResult(clientDTOs);
+        return new GetAllClientsResult(clientDTOs);
     }
 
     @Override
