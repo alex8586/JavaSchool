@@ -8,8 +8,9 @@ import lv.javaguru.java3.core.services.clients.ClientValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import lv.javaguru.java3.core.domain.RouteBuilder;
+import org.springframework.stereotype.Component;
 
-
+@Component
 public class RouteFactoryImpl implements RouteFactory {
 
     @Autowired private RouteValidator routeValidator;

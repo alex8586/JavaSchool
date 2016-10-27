@@ -6,10 +6,11 @@ import lv.javaguru.java3.core.domain.Client;
 import lv.javaguru.java3.core.domain.Route;
 import lv.javaguru.java3.core.domain.TransportType;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-
+@Component
 public class RouteServiceImpl implements RouteService {
 
     @Autowired private RouteValidator routeValidator;
