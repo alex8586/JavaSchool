@@ -12,9 +12,9 @@
     <include file="liquibase/changelogs/db.changelog.04__vehicles.xml"/>
     <include file="liquibase/changelogs/db.changelog.05__terminal_types.xml"/>
     <include file="liquibase/changelogs/db.changelog.06__terminals.xml"/>
-    <include file="liquibase/changelogs/db.changelog.07__authorisation_tokens.xml"/>
-    <include file="liquibase/changelogs/db.changelog.08__trip.xml"/>
-    <include file="liquibase/changelogs/db.changelog.09__registered_ride.xml"/>
+    <include file="liquibase/changelogs/db.changelog.07__tokens.xml"/>
+    <include file="liquibase/changelogs/db.changelog.08__trips.xml"/>
+    <include file="liquibase/changelogs/db.changelog.09__rides.xml"/>
 
 
 </databaseChangeLog>

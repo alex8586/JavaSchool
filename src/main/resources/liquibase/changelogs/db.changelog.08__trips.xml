@@ -8,7 +8,7 @@
 
 
     <changeSet id="1" author="dmitry" context="main">
-        <createTable tableName="trip">
+        <createTable tableName="trips">
             <column name="id" type="BIGINT" autoIncrement="true" startWith="1">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -21,16 +21,16 @@
 
     <changeSet id="2" author="dmitry" >
         <addForeignKeyConstraint baseColumnNames="route_id"
-                                 baseTableName="trip"
+                                 baseTableName="trips"
                                  constraintName="fk_route_id_for_trip"
                                  onDelete="RESTRICT"
                                  onUpdate="RESTRICT"
-                                 referencedColumnNames="route_id"
-                                 referencedTableName="vehicles"/>
+                                 referencedColumnNames="id"
+                                 referencedTableName="routes"/>
     </changeSet>
 
     <changeSet id="3" author="dmitry">
-        <createSequence sequenceName="trip_sec" startValue="100"/>
+        <createSequence sequenceName="trips_sec" startValue="100"/>
     </changeSet>
 
 </databaseChangeLog>
