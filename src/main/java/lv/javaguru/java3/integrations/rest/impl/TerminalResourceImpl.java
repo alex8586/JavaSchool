@@ -1,15 +1,13 @@
 package lv.javaguru.java3.integrations.rest.impl;
 
+import lv.javaguru.java3.core.commands.terminal.*;
 import lv.javaguru.java3.core.services.CommandExecutor;
 import lv.javaguru.java3.integrations.rest.api.RESTResource;
 import lv.javaguru.java3.integrations.rest.api.TerminalResource;
 import lv.javaguru.java3.integrations.rest.dto.TerminalDTO;
 import org.springframework.stereotype.Component;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import java.util.List;
 
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
@@ -30,7 +28,10 @@ public class TerminalResourceImpl implements TerminalResource {
     @Produces(APPLICATION_JSON)
     @Path("/terminal")
     public TerminalDTO create(TerminalDTO terminalDTO) {
-        return null;
+        CreateTerminalCommand command = new CreateTerminalCommand(terminalDTO.getVehicleId(),
+                                                                terminalDTO.getTerminalTypeId());
+        CreateTerminalResult result = commandExecutor.execute(command);
+        return result.getTerminalDTO();
     }
 
     @Override
@@ -38,13 +39,23 @@ public class TerminalResourceImpl implements TerminalResource {
         return null;
     }
 
-    @Override
+    @GET
+    @Consumes(APPLICATION_JSON)
+    @Produces(APPLICATION_JSON)
+    @Path("/terminal/{terminalId}")
     public TerminalDTO get(Long terminalId) {
-        return null;
+        GetTerminalCommand command = new GetTerminalCommand(terminalId);
+        GetTerminalResult result = commandExecutor.execute(command);
+        return result.getTerminalDTO();
     }
 
-    @Override
+    @GET
+    @Consumes(APPLICATION_JSON)
+    @Produces(APPLICATION_JSON)
+    @Path("/terminal/all")
     public List<TerminalDTO> getAll() {
-        return null;
+        GetAllTerminalCommand command = new GetAllTerminalCommand();
+        GetAllTerminalResult result = commandExecutor.execute(command);
+        return result.getTerminalDTOs();
     }
 }
