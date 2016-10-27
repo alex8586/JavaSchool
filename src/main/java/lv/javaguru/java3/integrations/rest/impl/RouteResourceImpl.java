@@ -1,7 +1,11 @@
 package lv.javaguru.java3.integrations.rest.impl;
 
+import lv.javaguru.java3.core.commands.clients.GetAllClientsCommand;
+import lv.javaguru.java3.core.commands.clients.GetAllClientsResult;
 import lv.javaguru.java3.core.commands.clients.GetClientCommand;
 import lv.javaguru.java3.core.commands.clients.GetClientResult;
+import lv.javaguru.java3.core.commands.routes.GetAllRoutesCommand;
+import lv.javaguru.java3.core.commands.routes.GetAllRoutesResult;
 import lv.javaguru.java3.core.commands.routes.GetRouteCommand;
 import lv.javaguru.java3.core.commands.routes.GetRouteResult;
 import lv.javaguru.java3.core.services.CommandExecutor;
@@ -38,6 +42,8 @@ public class RouteResourceImpl implements RouteResource {
     @Produces(APPLICATION_JSON)
     @Path("/routes")
     public List<RouteDTO> getAll() {
-        return null;
+        GetAllRoutesCommand command = new GetAllRoutesCommand();
+        GetAllRoutesResult result = commandExecutor.execute(command);
+        return result.getRoutes();
     }
 }
