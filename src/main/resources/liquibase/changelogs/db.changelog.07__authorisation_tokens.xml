@@ -13,10 +13,14 @@
                 <constraints primaryKey="true" nullable="false" />
             </column>
 
+            <column name="token_id" type="BIGINT" autoIncrement="true" startWith="1" >
+                <constraints nullable="false" unique="true" />
+            </column>
+
         </createTable>
     </changeSet>
 
-    <changeSet id="2" author="alex">
+    <changeSet id="3" author="alex">
         <createSequence sequenceName="authorisation_tokens_sec" startValue="100"/>
     </changeSet>
 
