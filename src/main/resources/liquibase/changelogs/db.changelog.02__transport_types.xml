@@ -40,6 +40,6 @@
     </changeSet>
 
     <changeSet id="3" author="algis" context="main">
-        <createSequence sequenceName="transport_type_seq" startValue="100"/>
+        <createSequence sequenceName="transport_types_seq" startValue="100"/>
     </changeSet>
 </databaseChangeLog>
