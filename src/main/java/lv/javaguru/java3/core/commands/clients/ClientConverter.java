@@ -22,5 +22,4 @@ class ClientConverter {
         return clients.stream().map(client -> convert(client)).collect(Collectors.toList());
     }
 
-
 }

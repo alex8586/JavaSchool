@@ -6,7 +6,6 @@ public class ClientDTOBuilder {
     private String login;
     private String password;
 
-
     private ClientDTOBuilder() {
 
     }

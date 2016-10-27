@@ -1,13 +1,12 @@
 package lv.javaguru.java3.core.services.routes;
 
-
-import com.google.common.base.Preconditions;
-
+import org.springframework.stereotype.Component;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.Preconditions.checkState;
 import static org.apache.commons.lang.StringUtils.isBlank;
 
+@Component
 public class RouteValidatorImpl implements RouteValidator {
 
     @Override
