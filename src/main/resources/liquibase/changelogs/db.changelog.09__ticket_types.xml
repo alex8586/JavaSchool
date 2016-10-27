@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="1" author="algis" context="main">
+        <createTable tableName="ticket_types">
+            <column name="id" type="BIGINT" autoIncrement="true" startWith="1">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+
+            <column name="name" type="varchar(20)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2" author="algis" context="main">
+        <insert tableName="ticket_types">
+            <column name="name" value="one-time ride"/>
+        </insert>
+        <insert tableName="ticket_types">
+            <column name="name" value="prepaid card"/>
+        </insert>
+        <insert tableName="ticket_types">
+            <column name="name" value="season ticket"/>
+        </insert>
+        <insert tableName="ticket_types">
+            <column name="name" value="postpaid ride"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="3" author="algis">
+        <createSequence sequenceName="ticket_types" startValue="100"/>
+    </changeSet>
+
+</databaseChangeLog>
