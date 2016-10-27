@@ -1,5 +1,6 @@
 package lv.javaguru.java3.integrations.rest.impl;
 
+import lv.javaguru.java3.core.commands.VoidResult;
 import lv.javaguru.java3.core.commands.clients.*;
 import lv.javaguru.java3.integrations.rest.dto.ClientDTO;
 import lv.javaguru.java3.core.services.CommandExecutor;
@@ -48,6 +49,16 @@ public class ClientResourceImpl implements ClientResource {
         UpdateClientResult result = commandExecutor.execute(command);
         return result.getClient();
     }
+
+    @DELETE
+    @Consumes(APPLICATION_JSON)
+    @Produces(APPLICATION_JSON)
+    @Path("/clients")
+    public void delete(ClientDTO clientDTO){
+        DeleteClientCommand command = new DeleteClientCommand(clientDTO.getId());
+        commandExecutor.execute(command);
+    }
+
 
     @GET
     @Consumes(APPLICATION_JSON)

@@ -13,7 +13,6 @@ class ClientServiceImpl implements ClientService {
     @Autowired private ClientDAO clientDAO;
     @Autowired private ClientValidator clientValidator;
 
-
     @Override
     public Client update(Long clientId,
                          String newLogin,
@@ -32,5 +31,10 @@ class ClientServiceImpl implements ClientService {
 
     @Override
     public List<Client> getAll() {return clientDAO.getAll();}
+    @Override
+    public void delete(Long clientId){
+        Client client = get(clientId);
+        clientDAO.delete(client);
+    }
 
 }

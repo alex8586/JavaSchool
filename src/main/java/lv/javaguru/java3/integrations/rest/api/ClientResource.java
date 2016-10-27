@@ -23,6 +23,12 @@ public interface ClientResource {
     @Path("/clients")
     ClientDTO update(ClientDTO clientDTO);
 
+    @DELETE
+    @Consumes(APPLICATION_JSON)
+    @Produces(APPLICATION_JSON)
+    @Path("/clients")
+    void delete(ClientDTO clientDTO);
+
     @GET
     @Consumes(APPLICATION_JSON)
     @Produces(APPLICATION_JSON)

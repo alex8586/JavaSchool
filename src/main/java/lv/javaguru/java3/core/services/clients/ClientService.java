@@ -10,7 +10,7 @@ public interface ClientService {
     Client update(Long clientId,
                   String newLogin,
                   String newPassword);
-
+    void delete(Long clientId);
     Client get(Long clientId);
     List<Client> getAll();
 
