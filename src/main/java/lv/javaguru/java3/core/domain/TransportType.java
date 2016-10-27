@@ -2,7 +2,6 @@ package lv.javaguru.java3.core.domain;
 
 import javax.persistence.*;
 
-
 @Entity
 @Table(name="transport_types")
 public class TransportType {
@@ -41,5 +40,14 @@ public class TransportType {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "TransportType{" +
+                "id=" + id +
+                ", code='" + code + '\'' +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

@@ -44,12 +44,21 @@ public class Route {
         this.name = name;
     }
 
-
     public TransportType getTransportType() {
         return transportType;
     }
 
     public void setTransportType(TransportType transportType) {
         this.transportType = transportType;
+    }
+
+    @Override
+    public String toString() {
+        return "Route{" +
+                "id=" + id +
+                ", code='" + code + '\'' +
+                ", name='" + name + '\'' +
+                ", transportType=" + transportType +
+                '}';
     }
 }
