@@ -1,5 +1,6 @@
 package lv.javaguru.java3.integrations.rest.clients;
 
+import feign.FeignException;
 import lv.javaguru.java3.integrations.rest.RESTResourceTest;
 import lv.javaguru.java3.integrations.rest.dto.ClientDTO;
 import org.apache.commons.lang.RandomStringUtils;
@@ -53,5 +54,19 @@ public class ClientResourceImplTest extends RESTResourceTest {
         assertThat(updatedClient.getId(), is(clientDTO.getId()));
         assertThat(updatedClient.getLogin(), is(clientDTO.getLogin()));
         assertThat(updatedClient.getPassword(), is(clientDTO.getPassword()));
+    }
+
+    @Test (expected = FeignException.class)
+    public void deleteClientTest(){
+        ClientDTO clientDTO = clientResource.get(persistentClient.getId());
+        clientResource.delete(clientDTO);
+        clientResource.get(persistentClient.getId());
+    }
+
+    @Test (expected = FeignException.class)
+    public void doubleDeleteClientTest(){
+        ClientDTO clientDTO = clientResource.get(persistentClient.getId());
+        clientResource.delete(clientDTO);
+        clientResource.delete(clientDTO);
     }
 }
