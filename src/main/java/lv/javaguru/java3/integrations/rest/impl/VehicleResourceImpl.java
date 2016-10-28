@@ -37,7 +37,7 @@ public class VehicleResourceImpl implements VehicleResourse {
     @PUT
     @Consumes(APPLICATION_JSON)
     @Produces(APPLICATION_JSON)
-    @Path("/vehicle")
+    @Path("/vehicles")
     public VehicleDTO update(VehicleDTO vehicleDTO) {
         return null;
     }
@@ -45,8 +45,8 @@ public class VehicleResourceImpl implements VehicleResourse {
     @GET
     @Consumes(APPLICATION_JSON)
     @Produces(APPLICATION_JSON)
-    @Path("/vehicle/{vehicleId}")
-    public VehicleDTO get(Long vehicleId) {
+    @Path("/vehicles/{vehiclesId}")
+    public VehicleDTO get(@PathParam("vehiclesId") Long vehicleId) {
         GetVehicleCommand command = new GetVehicleCommand(vehicleId);
         GetVehicleResult result = commandExecutor.execute(command);
         return result.getVehicleDTO();
@@ -55,7 +55,7 @@ public class VehicleResourceImpl implements VehicleResourse {
     @GET
     @Consumes(APPLICATION_JSON)
     @Produces(APPLICATION_JSON)
-    @Path("/vehicle/all")
+    @Path("/vehicles")
     public List<VehicleDTO> getAll() {
         GetAllVehicleCommand comand = new GetAllVehicleCommand();
         GetAllVehicleResult result = commandExecutor.execute(comand);

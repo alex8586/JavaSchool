@@ -13,24 +13,24 @@ public interface VehicleResourse {
     @POST
     @Consumes(APPLICATION_JSON)
     @Produces(APPLICATION_JSON)
-    @Path("/vehicle")
+    @Path("/vehicles")
     VehicleDTO create(VehicleDTO vehicleDTO);
 
     @PUT
     @Consumes(APPLICATION_JSON)
     @Produces(APPLICATION_JSON)
-    @Path("/vehicle")
+    @Path("/vehicles")
     VehicleDTO update(VehicleDTO vehicleDTO);
 
     @GET
     @Consumes(APPLICATION_JSON)
     @Produces(APPLICATION_JSON)
-    @Path("/vehicle/{vehicleId}")
-    VehicleDTO get(@PathParam("vehicleId") Long vehicleId);
+    @Path("/vehicles/{vehiclesId}")
+    VehicleDTO get(@PathParam("vehiclesId") Long vehicleId);
 
     @GET
     @Consumes(APPLICATION_JSON)
     @Produces(APPLICATION_JSON)
-    @Path("/vehicle/all")
+    @Path("/vehicles")
     List<VehicleDTO> getAll();
 }

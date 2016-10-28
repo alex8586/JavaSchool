@@ -27,7 +27,7 @@ public class TerminalTypeResourceImpl implements TerminalTypeResource {
     @POST
     @Consumes(APPLICATION_JSON)
     @Produces(APPLICATION_JSON)
-    @Path("/terminal_type")
+    @Path("/terminal_types")
     public TerminalTypeDTO create(TerminalTypeDTO terminalTypeDTO) {
         CreateTerminalTypeCommand command = new CreateTerminalTypeCommand(terminalTypeDTO.getName());
         CreateTerminalTypeResult result = commandExecutor.execute(command);
@@ -42,9 +42,9 @@ public class TerminalTypeResourceImpl implements TerminalTypeResource {
     @GET
     @Consumes(APPLICATION_JSON)
     @Produces(APPLICATION_JSON)
-    @Path("/terminal_type/{terminalTypeId}")
-    public TerminalTypeDTO get(Long terminalTypeId) {
-        GetTerminalTypeCommand command = new GetTerminalTypeCommand(terminalTypeId);
+    @Path("/terminal_types/{terminalTypesId}")
+    public TerminalTypeDTO get(@PathParam("terminalTypesId") Long terminalTypesId) {
+        GetTerminalTypeCommand command = new GetTerminalTypeCommand(terminalTypesId);
         GetTerminalTypeResult result = commandExecutor.execute(command);
         return result.getTerminalTypeDTO();
     }
@@ -52,7 +52,7 @@ public class TerminalTypeResourceImpl implements TerminalTypeResource {
     @GET
     @Consumes(APPLICATION_JSON)
     @Produces(APPLICATION_JSON)
-    @Path("/terminal_types/all")
+    @Path("/terminal_types")
     public List<TerminalTypeDTO> getAll() {
         GetAllTerminalTypeCommand command = new GetAllTerminalTypeCommand();
         GetAllTerminalTypeResult result = commandExecutor.execute(command);

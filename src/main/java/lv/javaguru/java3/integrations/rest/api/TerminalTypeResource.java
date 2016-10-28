@@ -13,24 +13,24 @@ public interface TerminalTypeResource {
     @POST
     @Consumes(APPLICATION_JSON)
     @Produces(APPLICATION_JSON)
-    @Path("/terminal_type")
+    @Path("/terminal_types")
     TerminalTypeDTO create(TerminalTypeDTO terminalTypeDTO);
 
     @PUT
     @Consumes(APPLICATION_JSON)
     @Produces(APPLICATION_JSON)
-    @Path("/terminal_type")
+    @Path("/terminal_types")
     TerminalTypeDTO update(TerminalTypeDTO terminalTypeDTO);
 
     @GET
     @Consumes(APPLICATION_JSON)
     @Produces(APPLICATION_JSON)
-    @Path("/terminal_type/{terminalTypeId}")
-    TerminalTypeDTO get(@PathParam("terminalTypeId") Long terminalTypeId);
+    @Path("/terminal_types/{terminalTypesId}")
+    TerminalTypeDTO get(@PathParam("terminalTypesId") Long terminalTypeId);
 
     @GET
     @Consumes(APPLICATION_JSON)
     @Produces(APPLICATION_JSON)
-    @Path("/terminal_types/all")
+    @Path("/terminal_types")
     List<TerminalTypeDTO> getAll();
 }

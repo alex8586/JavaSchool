@@ -1,7 +1,5 @@
 package lv.javaguru.java3.core.domain;
 
-import org.springframework.data.repository.cdi.Eager;
-
 import javax.persistence.*;
 
 @Entity
@@ -15,11 +13,10 @@ public class Terminal {
     private Long id;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @PrimaryKeyJoinColumn
     private Vehicle vehicle;
 
     @OneToOne(fetch = FetchType.EAGER)
-    @PrimaryKeyJoinColumn
+    @JoinColumn(name = "id")
     private TerminalType terminalType;
 
     public Long getId() {
