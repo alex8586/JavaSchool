@@ -12,5 +12,15 @@
         </addColumn>
     </changeSet>
 
+    <changeSet id="2" author="algis">
+        <insert tableName="trips">
+            <column name="vehicle_id" value="1"/>
+            <column name="is_ongoing" value="false"/>
+        </insert>
+        <insert tableName="trips">
+            <column name="vehicle_id" value="1"/>
+        </insert>
+    </changeSet>
+
 </databaseChangeLog>
 

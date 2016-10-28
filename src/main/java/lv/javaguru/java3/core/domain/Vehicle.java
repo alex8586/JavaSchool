@@ -1,6 +1,9 @@
 package lv.javaguru.java3.core.domain;
 
+import org.hibernate.annotations.Where;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "vehicles")
@@ -17,6 +20,11 @@ public class Vehicle {
 
     @ManyToOne(fetch = FetchType.EAGER)
     private Route route;
+
+    @OneToMany(fetch = FetchType.EAGER)
+    @Where(clause = "is_ongoing = 1")
+    @JoinColumn(name = "vehicle_id")
+    private List<Trip> trips;
 
     public Long getId() {
         return id;
@@ -40,5 +48,29 @@ public class Vehicle {
 
     public void setRoute(Route route) {
         this.route = route;
+    }
+
+    public void setTrips(List<Trip> trips) {
+        this.trips = trips;
+    }
+    public void addTrip(Trip trip){
+        this.trips.add(trip);
+    }
+
+    public Trip getCurrentTrip(){
+        if(trips == null || trips.size()== 0)
+            return null;
+        if(trips.size()>1)
+            throw new IllegalStateException();
+        return trips.get(0);
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "id=" + id +
+                ", carCode='" + carCode + '\'' +
+                ", route=" + route +
+                '}';
     }
 }
