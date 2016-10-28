@@ -30,7 +30,7 @@
     </changeSet>
 
     <changeSet id="3" author="dmitry">
-        <createSequence sequenceName="trips_sec" startValue="100"/>
+        <createSequence sequenceName="trips_seq" startValue="100"/>
     </changeSet>
 
 </databaseChangeLog>

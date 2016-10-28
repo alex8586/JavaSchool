@@ -16,7 +16,8 @@ public class Trip {
     @Column(name = "is_ongoing")
     private boolean isOngoing = true;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "trip_id")
     private List<Ride> rides;
 
     public Long getId() {

@@ -21,7 +21,7 @@
     </changeSet>
 
     <changeSet id="3" author="alex">
-        <createSequence sequenceName="tokens_sec" startValue="100"/>
+        <createSequence sequenceName="tokens_seq" startValue="100"/>
     </changeSet>
 
 </databaseChangeLog>
