@@ -2,6 +2,7 @@ package lv.javaguru.java3.core.commands.terminal;
 
 import lv.javaguru.java3.core.commands.DomainCommand;
 import lv.javaguru.java3.core.domain.TerminalType;
+import lv.javaguru.java3.core.domain.Vehicle;
 
 public class CreateTerminalCommand implements DomainCommand<CreateTerminalResult> {
 

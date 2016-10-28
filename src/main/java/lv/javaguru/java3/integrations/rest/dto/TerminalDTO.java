@@ -1,6 +1,7 @@
 package lv.javaguru.java3.integrations.rest.dto;
 
 import lv.javaguru.java3.core.domain.TerminalType;
+import lv.javaguru.java3.core.domain.Vehicle;
 
 import java.io.Serializable;
 

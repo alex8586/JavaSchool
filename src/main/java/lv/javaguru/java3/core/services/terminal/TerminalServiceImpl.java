@@ -2,6 +2,8 @@ package lv.javaguru.java3.core.services.terminal;
 
 import lv.javaguru.java3.core.database.TerminalDAO;
 import lv.javaguru.java3.core.domain.Terminal;
+import lv.javaguru.java3.core.domain.TerminalType;
+import lv.javaguru.java3.core.domain.Vehicle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -14,9 +16,9 @@ public class TerminalServiceImpl implements TerminalService {
     private TerminalDAO terminalDAO;
 
     @Override
-    public Terminal update(long id, long vehicleId, long terminalType) {
+    public Terminal update(long id, Vehicle vehicle, TerminalType terminalType) {
         Terminal terminal = get(id);
-        terminal.setVehicleId(vehicleId);
+        terminal.setVehicle(vehicle);
         terminal.setTerminalType(terminalType);
         return terminal;
     }

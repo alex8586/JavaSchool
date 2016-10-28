@@ -3,6 +3,7 @@ package lv.javaguru.java3.core.services.terminal;
 import lv.javaguru.java3.core.database.TerminalDAO;
 import lv.javaguru.java3.core.domain.Terminal;
 import lv.javaguru.java3.core.domain.TerminalType;
+import lv.javaguru.java3.core.domain.Vehicle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

@@ -5,6 +5,7 @@ import lv.javaguru.java3.core.services.CommandExecutor;
 import lv.javaguru.java3.integrations.rest.api.RESTResource;
 import lv.javaguru.java3.integrations.rest.api.TerminalResource;
 import lv.javaguru.java3.integrations.rest.dto.TerminalDTO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.ws.rs.*;
@@ -18,11 +19,11 @@ public class TerminalResourceImpl implements TerminalResource {
 
     private CommandExecutor commandExecutor;
 
+    @Autowired
     public TerminalResourceImpl(CommandExecutor commandExecutor){
         this.commandExecutor = commandExecutor;
     }
 
-    @Override
     @POST
     @Consumes(APPLICATION_JSON)
     @Produces(APPLICATION_JSON)
@@ -34,7 +35,6 @@ public class TerminalResourceImpl implements TerminalResource {
         return result.getTerminalDTO();
     }
 
-    @Override
     public TerminalDTO update(TerminalDTO terminalDTO) {
         return null;
     }

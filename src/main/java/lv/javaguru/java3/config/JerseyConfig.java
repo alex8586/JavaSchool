@@ -1,7 +1,7 @@
 package lv.javaguru.java3.config;
 
-import lv.javaguru.java3.integrations.rest.api.RouteResource;
 import lv.javaguru.java3.core.domain.TerminalType;
+import lv.javaguru.java3.core.domain.Vehicle;
 import lv.javaguru.java3.integrations.rest.api.TerminalResource;
 import lv.javaguru.java3.integrations.rest.impl.ClientResourceImpl;
 import lv.javaguru.java3.integrations.rest.impl.RouteResourceImpl;
@@ -16,6 +16,7 @@ class JerseyConfig extends ResourceConfig {
         register(RouteResourceImpl.class);
         register(TerminalResource.class);
         register(TerminalType.class);
+        register(Vehicle.class);
     }
 
 }
