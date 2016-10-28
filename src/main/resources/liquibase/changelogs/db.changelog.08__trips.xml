@@ -13,20 +13,20 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
 
-            <column name="route_id" type="BIGINT">
+            <column name="vehicle_id" type="BIGINT">
                 <constraints  nullable="false"/>
             </column>
         </createTable>
     </changeSet>
 
     <changeSet id="2" author="dmitry" >
-        <addForeignKeyConstraint baseColumnNames="route_id"
+        <addForeignKeyConstraint baseColumnNames="vehicle_id"
                                  baseTableName="trips"
                                  constraintName="fk_route_id_for_trip"
                                  onDelete="RESTRICT"
                                  onUpdate="RESTRICT"
                                  referencedColumnNames="id"
-                                 referencedTableName="routes"/>
+                                 referencedTableName="vehicles"/>
     </changeSet>
 
     <changeSet id="3" author="dmitry">

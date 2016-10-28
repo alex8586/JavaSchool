@@ -16,14 +16,12 @@
     <include file="liquibase/changelogs/db.changelog.08__trips.xml"/>
     <include file="liquibase/changelogs/db.changelog.09__rides.xml"/>
 
-
     <include file="liquibase/changelogs/db.changelog.10__token_types.xml"/>
     <include file="liquibase/changelogs/db.changelog.11__ticket_types.xml"/>
     <include file="liquibase/changelogs/db.changelog.12__ticket_types_per_token.xml"/>
     <include file="liquibase/changelogs/db.changelog.13__tickets.xml"/>
 
-
-
+    <include file="liquibase/changelogs/db.changelog.14__trips_active_column.xml"/>
 
 
 </databaseChangeLog>
