@@ -27,6 +27,7 @@ class CommandExecutorImpl implements CommandExecutor {
             for (DomainCommandHandler service : services) {
                 Class domainCommandClass = service.getCommandType();
                 commandServiceMap.put(domainCommandClass, service);
+                System.out.println("type " + service.getCommandType());
             }
         }
     }
