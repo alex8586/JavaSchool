@@ -1,22 +1,23 @@
 package lv.javaguru.java3.core.commands.terminal;
 
 import lv.javaguru.java3.core.commands.DomainCommand;
+import lv.javaguru.java3.core.domain.TerminalType;
 
 public class CreateTerminalCommand implements DomainCommand<CreateTerminalResult> {
 
-    private Long vehicleId;
-    private Long terminalTypeId;
+    private Vehicle vehicle;
+    private TerminalType terminalType;
 
-    public CreateTerminalCommand(Long vehicleId, Long terminalTypeId) {
-        this.vehicleId = vehicleId;
-        this.terminalTypeId = terminalTypeId;
+    public CreateTerminalCommand(Vehicle vehicle, TerminalType terminalType) {
+        this.vehicle = vehicle;
+        this.terminalType = terminalType;
     }
 
-    public Long getVehicleId() {
-        return vehicleId;
+    public Vehicle getVehicle() {
+        return vehicle;
     }
 
-    public Long getTerminalTypeId() {
-        return terminalTypeId;
+    public TerminalType getTerminalType() {
+        return terminalType;
     }
 }

@@ -1,10 +1,12 @@
 package lv.javaguru.java3.integrations.rest.dto;
 
+import lv.javaguru.java3.core.domain.TerminalType;
+
 public class TerminalDTOBuilder {
 
     private Long id;
-    private Long vehicleId;
-    private Long terminalTypeId;
+    private Vehicle vehicle;
+    private TerminalType terminalType;
 
     private TerminalDTOBuilder(){
 
@@ -17,8 +19,8 @@ public class TerminalDTOBuilder {
     public TerminalDTO build(){
         TerminalDTO terminalDTO = new TerminalDTO();
         terminalDTO.setId(id);
-        terminalDTO.setVehicleId(vehicleId);
-        terminalDTO.setTerminalTypeId(terminalTypeId);
+        terminalDTO.setVehicle(vehicle);
+        terminalDTO.setTerminalType(terminalType);
         return terminalDTO;
     }
 
@@ -27,13 +29,13 @@ public class TerminalDTOBuilder {
         return this;
     }
 
-    public TerminalDTOBuilder withVehicleId(Long vehicleId){
-        this.vehicleId = vehicleId;
+    public TerminalDTOBuilder withVehicle(Vehicle vehicle){
+        this.vehicle = vehicle;
         return this;
     }
 
-    public TerminalDTOBuilder withTerminalTypeId(Long terminalTypeId){
-        this.terminalTypeId = terminalTypeId;
+    public TerminalDTOBuilder withTerminalType(TerminalType terminalType){
+        this.terminalType = terminalType;
         return this;
     }
 }

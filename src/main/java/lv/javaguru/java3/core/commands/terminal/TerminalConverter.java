@@ -16,8 +16,8 @@ public class TerminalConverter {
 
         return createTerminalDTO()
                 .withId(terminal.getId())
-                .withVehicleId(terminal.getVehicleId())
-                .withTerminalTypeId(terminal.getTerminalType())
+                .withVehicle(terminal.getVehicle())
+                .withTerminalType(terminal.getTerminalType())
                 .build();
     }
 

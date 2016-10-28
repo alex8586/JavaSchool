@@ -2,6 +2,7 @@ package lv.javaguru.java3.core.services.terminal;
 
 import lv.javaguru.java3.core.database.TerminalDAO;
 import lv.javaguru.java3.core.domain.Terminal;
+import lv.javaguru.java3.core.domain.TerminalType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -14,9 +15,9 @@ public class TerminalFactoryImpl implements TerminalFactory {
     private TerminalDAO terminalDAO;
 
     @Override
-    public Terminal create(Long vehicleId, Long terminalType) {
+    public Terminal create(Vehicle vehicle, TerminalType terminalType) {
         Terminal terminal = createTerminal()
-                .withVehicleId(vehicleId)
+                .withVehicle(vehicle)
                 .withTerminalType(terminalType)
                 .build();
         terminalDAO.create(terminal);

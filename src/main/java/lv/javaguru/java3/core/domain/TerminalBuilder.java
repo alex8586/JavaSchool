@@ -3,8 +3,8 @@ package lv.javaguru.java3.core.domain;
 public class TerminalBuilder {
 
     private Long id;
-    private Long vehicleId;
-    private Long terminalType;
+    private Vehicle vehicle;
+    private TerminalType terminalType;
 
     private TerminalBuilder(){
 
@@ -17,7 +17,7 @@ public class TerminalBuilder {
     public Terminal build(){
         Terminal terminal = new Terminal();
         terminal.setId(id);
-        terminal.setVehicleId(vehicleId);
+        terminal.setVehicle(vehicle);
         terminal.setTerminalType(terminalType);
         return terminal;
     }
@@ -27,12 +27,12 @@ public class TerminalBuilder {
         return this;
     }
 
-    public TerminalBuilder withVehicleId(Long vehicleId){
-        this.vehicleId = vehicleId;
+    public TerminalBuilder withVehicle(Vehicle vehicle){
+        this.vehicle = vehicle;
         return this;
     }
 
-    public TerminalBuilder withTerminalType(Long terminalType){
+    public TerminalBuilder withTerminalType(TerminalType terminalType){
         this.terminalType = terminalType;
         return this;
     }

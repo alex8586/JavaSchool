@@ -18,8 +18,8 @@ public class CreateTerminalCommandHandler
 
     @Override
     public CreateTerminalResult execute(CreateTerminalCommand command) {
-        Terminal terminal = terminalFactory.create(command.getVehicleId(),
-                                                    command.getTerminalTypeId());
+        Terminal terminal = terminalFactory.create(command.getVehicle(),
+                                                    command.getTerminalType());
         TerminalDTO terminalDTO = terminalConverter.convert(terminal);
         return new CreateTerminalResult(terminalDTO);
     }
