@@ -1,6 +1,5 @@
 package lv.javaguru.java3.core.commands.terminal_type;
 
-import lv.javaguru.java3.core.commands.terminal.CreateTerminalCommand;
 import lv.javaguru.java3.core.domain.TerminalType;
 import lv.javaguru.java3.core.services.DomainCommandHandler;
 import lv.javaguru.java3.core.services.terminal_type.TerminalTypeFactory;
@@ -26,6 +25,6 @@ public class CreateTerminalTypeCommandHandler
 
     @Override
     public Class getCommandType() {
-        return CreateTerminalCommand.class;
+        return CreateTerminalTypeCommand.class;
     }
 }

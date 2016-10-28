@@ -27,6 +27,6 @@ public class GetAllVehicleCommandHandler
 
     @Override
     public Class getCommandType() {
-        return GetAllVehicleResult.class;
+        return GetAllVehicleCommand.class;
     }
 }
