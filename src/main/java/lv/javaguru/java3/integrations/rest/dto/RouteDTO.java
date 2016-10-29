@@ -11,7 +11,6 @@ public class RouteDTO {
     private Long id;
     private String code;
     private String name;
-    private long transportTypeId;
     private TransportTypeDTO transportType;
 
     public Long getId() {
@@ -36,14 +35,6 @@ public class RouteDTO {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public long getTransportTypeId() {
-        return transportTypeId;
-    }
-
-    public void setTransportTypeId(long transportTypeId) {
-        this.transportTypeId = transportTypeId;
     }
 
     public TransportTypeDTO getTransportType() {

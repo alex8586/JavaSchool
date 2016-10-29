@@ -25,14 +25,6 @@ public class TransportTypeDTOBuilder {
         return transportTypeDTO;
     }
 
-    public static TransportTypeDTO buildFromTransportType(TransportType transportType){
-        TransportTypeDTO transportTypeDTO = new TransportTypeDTO();
-        transportTypeDTO.setId(transportType.getId());
-        transportTypeDTO.setName(transportType.getName());
-        transportTypeDTO.setCode(transportType.getCode());
-        return transportTypeDTO;
-    }
-
     public TransportTypeDTOBuilder withId(Long id) {
         this.id = id;
         return this;

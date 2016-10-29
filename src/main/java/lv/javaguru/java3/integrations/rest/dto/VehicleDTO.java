@@ -6,7 +6,7 @@ public class VehicleDTO {
 
     private Long id;
     private String carCode;
-    private Route route;
+    private RouteDTO route;
 
     public Long getId() {
         return id;
@@ -24,11 +24,11 @@ public class VehicleDTO {
         this.carCode = carCode;
     }
 
-    public Route getRoute() {
+    public RouteDTO getRouteDTO() {
         return route;
     }
 
-    public void setRoute(Route route) {
-        this.route = route;
+    public void setRoute(RouteDTO routeDTO) {
+        this.route = routeDTO;
     }
 }

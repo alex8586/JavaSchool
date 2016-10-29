@@ -6,7 +6,7 @@ public class VehicleDTOBuilder {
 
     private Long id;
     private String carCode;
-    private Route route;
+    private RouteDTO routeDTO;
 
     private VehicleDTOBuilder(){
 
@@ -20,7 +20,7 @@ public class VehicleDTOBuilder {
         VehicleDTO vehicleDTO = new VehicleDTO();
         vehicleDTO.setId(id);
         vehicleDTO.setCarCode(carCode);
-        vehicleDTO.setRoute(route);
+        vehicleDTO.setRoute(routeDTO);
         return vehicleDTO;
     }
 
@@ -34,8 +34,8 @@ public class VehicleDTOBuilder {
         return this;
     }
 
-    public VehicleDTOBuilder withRoute(Route route){
-        this.route = route;
+    public VehicleDTOBuilder withRouteDTO(RouteDTO routeDTO){
+        this.routeDTO = routeDTO;
         return this;
     }
 }

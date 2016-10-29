@@ -6,18 +6,18 @@ import lv.javaguru.java3.core.domain.Route;
 public class CreateVehicleCommand implements DomainCommand<CreateVehicleResult> {
 
     private String carCode;
-    private Route route;
+    private long routeId;
 
-    public CreateVehicleCommand(String carCode, Route route) {
+    public CreateVehicleCommand(String carCode, long routeId) {
         this.carCode = carCode;
-        this.route = route;
+        this.routeId = routeId;
     }
 
     public String getCarCode() {
         return carCode;
     }
 
-    public Route getRoute() {
-        return route;
+    public long getRouteId() {
+        return routeId;
     }
 }

@@ -1,5 +1,7 @@
 package lv.javaguru.java3.core.commands.vehicle;
 
+import lv.javaguru.java3.core.database.RouteDAO;
+import lv.javaguru.java3.core.domain.Route;
 import lv.javaguru.java3.core.domain.Vehicle;
 import lv.javaguru.java3.core.services.DomainCommandHandler;
 import lv.javaguru.java3.core.services.vehicle.VehicleFactory;
@@ -16,9 +18,12 @@ public class CreateVehicleCommandHandler
     @Autowired
     private VehicleConverter vehicleConverter;
 
+    @Autowired
+    private RouteDAO routeDAO;
     @Override
     public CreateVehicleResult execute(CreateVehicleCommand command) {
-        Vehicle vehicle = vehicleFactory.create(command.getCarCode(), command.getRoute());
+        Route route = routeDAO.getById(command.getRouteId());
+        Vehicle vehicle = vehicleFactory.create(command.getCarCode(), route);
         VehicleDTO vehicleDTO = vehicleConverter.convert(vehicle);
         return new CreateVehicleResult(vehicleDTO);
     }

@@ -1,6 +1,6 @@
 package lv.javaguru.java3.integrations.rest.impl;
 
-import lv.javaguru.java3.core.commands.terminal_type.*;
+import lv.javaguru.java3.core.commands.terminalTypes.*;
 import lv.javaguru.java3.core.services.CommandExecutor;
 import lv.javaguru.java3.integrations.rest.api.RESTResource;
 import lv.javaguru.java3.integrations.rest.api.TerminalTypeResource;
@@ -27,7 +27,7 @@ public class TerminalTypeResourceImpl implements TerminalTypeResource {
     @POST
     @Consumes(APPLICATION_JSON)
     @Produces(APPLICATION_JSON)
-    @Path("/terminal_types")
+    @Path("/terminaltypes")
     public TerminalTypeDTO create(TerminalTypeDTO terminalTypeDTO) {
         CreateTerminalTypeCommand command = new CreateTerminalTypeCommand(terminalTypeDTO.getName());
         CreateTerminalTypeResult result = commandExecutor.execute(command);
@@ -42,8 +42,8 @@ public class TerminalTypeResourceImpl implements TerminalTypeResource {
     @GET
     @Consumes(APPLICATION_JSON)
     @Produces(APPLICATION_JSON)
-    @Path("/terminal_types/{terminalTypesId}")
-    public TerminalTypeDTO get(@PathParam("terminalTypesId") Long terminalTypesId) {
+    @Path("/terminaltypes/{terminalTypeId}")
+    public TerminalTypeDTO get(@PathParam("terminalTypeId") Long terminalTypesId) {
         GetTerminalTypeCommand command = new GetTerminalTypeCommand(terminalTypesId);
         GetTerminalTypeResult result = commandExecutor.execute(command);
         return result.getTerminalTypeDTO();
@@ -52,7 +52,7 @@ public class TerminalTypeResourceImpl implements TerminalTypeResource {
     @GET
     @Consumes(APPLICATION_JSON)
     @Produces(APPLICATION_JSON)
-    @Path("/terminal_types")
+    @Path("/terminaltypes")
     public List<TerminalTypeDTO> getAll() {
         GetAllTerminalTypeCommand command = new GetAllTerminalTypeCommand();
         GetAllTerminalTypeResult result = commandExecutor.execute(command);

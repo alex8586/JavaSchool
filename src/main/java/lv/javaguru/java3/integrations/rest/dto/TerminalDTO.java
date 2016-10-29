@@ -8,8 +8,10 @@ import java.io.Serializable;
 public class TerminalDTO implements Serializable {
 
     private Long id;
-    private Vehicle vehicle;
-    private TerminalType terminalType;
+
+    private VehicleDTO vehicle;
+
+    private TerminalTypeDTO terminalType;
 
     public Long getId() {
         return id;
@@ -19,19 +21,18 @@ public class TerminalDTO implements Serializable {
         this.id = id;
     }
 
-    public Vehicle getVehicle() {
+    public VehicleDTO getVehicleDTO() {
         return vehicle;
     }
-
-    public void setVehicle(Vehicle vehicle) {
+    public void setVehicleDTO(VehicleDTO vehicle) {
         this.vehicle = vehicle;
     }
 
-    public TerminalType getTerminalType() {
+    public TerminalTypeDTO getTerminalType() {
         return terminalType;
     }
 
-    public void setTerminalType(TerminalType terminalType) {
+    public void setTerminalType(TerminalTypeDTO terminalType) {
         this.terminalType = terminalType;
     }
 }
