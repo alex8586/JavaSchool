@@ -42,7 +42,8 @@ public class DispatchCommandHandler implements DomainCommandHandler<DispatchComm
         Trip newTrip = vehicleService.revolveTrip(vehicle);
 
         DispatchDTO dispatchDTO = new DispatchDTO();
-        dispatchDTO.setOldTrip(tripConverter.convert(vehicle.getCurrentTrip()));
+        if(vehicle.getCurrentTrip()!= null)
+            dispatchDTO.setOldTrip(tripConverter.convert(vehicle.getCurrentTrip()));
         dispatchDTO.setNewTrip(tripConverter.convert(newTrip));
         return new DispatchResult(dispatchDTO);
     }

@@ -24,7 +24,7 @@ public class VehicleDTO {
         this.carCode = carCode;
     }
 
-    public RouteDTO getRouteDTO() {
+    public RouteDTO getRoute() {
         return route;
     }
 
