@@ -1,4 +1,4 @@
-package lv.javaguru.java3.core.commands.transportTypes;
+package lv.javaguru.java3.core.commands.routes.transportTypes;
 
 import lv.javaguru.java3.core.domain.TransportType;
 import lv.javaguru.java3.integrations.rest.dto.TransportTypeDTO;

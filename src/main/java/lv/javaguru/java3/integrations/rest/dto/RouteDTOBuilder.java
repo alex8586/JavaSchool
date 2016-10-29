@@ -1,9 +1,5 @@
 package lv.javaguru.java3.integrations.rest.dto;
 
-import lv.javaguru.java3.core.commands.transportTypes.TransportTypeConverter;
-import lv.javaguru.java3.core.domain.TransportType;
-import org.springframework.beans.factory.annotation.Autowired;
-
 
 public class RouteDTOBuilder {
     private Long id;

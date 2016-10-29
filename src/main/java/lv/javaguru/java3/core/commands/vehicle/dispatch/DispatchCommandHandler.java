@@ -35,7 +35,7 @@ public class DispatchCommandHandler implements DomainCommandHandler<DispatchComm
     @Override
     public DispatchResult execute(DispatchCommand command) {
         Terminal terminal = terminalService.get(command.getTerminalId());
-        if(terminal.getTerminalType().getId() != 2)
+        if(terminal.getTerminalType().getId() != 3)
             throw new IllegalArgumentException();
 
         Vehicle vehicle = terminal.getVehicle();

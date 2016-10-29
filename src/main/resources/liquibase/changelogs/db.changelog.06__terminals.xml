@@ -17,7 +17,7 @@
                 <constraints  nullable="true"/>
             </column>
 
-            <column name="terminal_type" type="BIGINT">
+            <column name="terminal_type_id" type="BIGINT">
                 <constraints nullable="false"/>
             </column>
         </createTable>
@@ -34,7 +34,7 @@
     </changeSet>
 
     <changeSet id="3" author="alex" >
-        <addForeignKeyConstraint baseColumnNames="terminal_type"
+        <addForeignKeyConstraint baseColumnNames="terminal_type_id"
                                  baseTableName="terminals"
                                  constraintName="fk_terminal_on_terminal_type"
                                  onDelete="RESTRICT"
@@ -47,20 +47,20 @@
 
         <insert tableName="terminals">
             <column name="vehicle_id">1</column>
-            <column name="terminal_type">1</column>
+            <column name="terminal_type_id">1</column>
         </insert>
         <insert tableName="terminals">
             <column name="vehicle_id">1</column>
-            <column name="terminal_type">3</column>
+            <column name="terminal_type_id">3</column>
         </insert>
 
         <insert tableName="terminals">
             <column name="vehicle_id">2</column>
-            <column name="terminal_type">1</column>
+            <column name="terminal_type_id">1</column>
         </insert>
         <insert tableName="terminals">
             <column name="vehicle_id">2</column>
-            <column name="terminal_type">3</column>
+            <column name="terminal_type_id">3</column>
         </insert>
 
     </changeSet>

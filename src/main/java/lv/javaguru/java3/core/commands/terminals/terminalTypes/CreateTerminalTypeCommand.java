@@ -1,4 +1,4 @@
-package lv.javaguru.java3.core.commands.terminalTypes;
+package lv.javaguru.java3.core.commands.terminals.terminalTypes;
 
 import lv.javaguru.java3.core.commands.DomainCommand;
 

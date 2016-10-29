@@ -15,8 +15,7 @@ public class Terminal {
     @ManyToOne(fetch = FetchType.EAGER)
     private Vehicle vehicle;
 
-    @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "id")
+    @ManyToOne(fetch = FetchType.EAGER)
     private TerminalType terminalType;
 
     public Long getId() {
@@ -41,5 +40,14 @@ public class Terminal {
 
     public void setTerminalType(TerminalType terminalType) {
         this.terminalType = terminalType;
+    }
+
+    @Override
+    public String toString() {
+        return "Terminal{" +
+                "id=" + id +
+                ", vehicle=" + vehicle +
+                ", terminalType=" + terminalType +
+                '}';
     }
 }

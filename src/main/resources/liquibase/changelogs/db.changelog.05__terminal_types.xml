@@ -30,7 +30,7 @@ xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
     </insert>
 
     <insert tableName="terminal_types">
-        <column name="name">Vehicles Terminal</column>
+        <column name="name">Driver's toolbox</column>
     </insert>
 
     <insert tableName="terminal_types">

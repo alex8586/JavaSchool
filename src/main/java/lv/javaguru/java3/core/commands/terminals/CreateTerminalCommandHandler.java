@@ -29,6 +29,8 @@ public class CreateTerminalCommandHandler
     public CreateTerminalResult execute(CreateTerminalCommand command) {
         Vehicle vehicle = vehicleDAO.getById(command.getVehicleId());
         TerminalType terminalType = terminalTypeDAO.getById(command.getTerminalTypeId());
+        System.out.println(vehicle);
+        System.out.println(terminalType);
 
         Terminal terminal = terminalFactory.create(vehicle,terminalType);
         TerminalDTO terminalDTO = terminalConverter.convert(terminal);

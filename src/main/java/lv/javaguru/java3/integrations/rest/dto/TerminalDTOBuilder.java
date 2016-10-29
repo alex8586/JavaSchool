@@ -1,11 +1,5 @@
 package lv.javaguru.java3.integrations.rest.dto;
 
-import lv.javaguru.java3.core.commands.terminalTypes.TerminalTypeConverter;
-import lv.javaguru.java3.core.commands.vehicle.VehicleConverter;
-import lv.javaguru.java3.core.domain.TerminalType;
-import lv.javaguru.java3.core.domain.Vehicle;
-import org.springframework.beans.factory.annotation.Autowired;
-
 public class TerminalDTOBuilder {
 
     private long id;
@@ -23,7 +17,7 @@ public class TerminalDTOBuilder {
     public TerminalDTO build(){
         TerminalDTO terminalDTO = new TerminalDTO();
         terminalDTO.setId(id);
-        terminalDTO.setVehicleDTO(vehicle);
+        terminalDTO.setVehicle(vehicle);
         terminalDTO.setTerminalType(terminalType);
         return terminalDTO;
     }

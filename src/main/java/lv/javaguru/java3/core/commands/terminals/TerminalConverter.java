@@ -1,6 +1,6 @@
 package lv.javaguru.java3.core.commands.terminals;
 
-import lv.javaguru.java3.core.commands.terminalTypes.TerminalTypeConverter;
+import lv.javaguru.java3.core.commands.terminals.terminalTypes.TerminalTypeConverter;
 import lv.javaguru.java3.core.commands.vehicle.VehicleConverter;
 import lv.javaguru.java3.core.domain.Terminal;
 import lv.javaguru.java3.integrations.rest.dto.TerminalDTO;

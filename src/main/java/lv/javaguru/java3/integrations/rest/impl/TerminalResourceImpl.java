@@ -25,8 +25,8 @@ public class TerminalResourceImpl implements TerminalResource {
     @Produces(APPLICATION_JSON)
     @Path("/terminals")
     public TerminalDTO create(TerminalDTO terminalDTO) {
-        CreateTerminalCommand command = new CreateTerminalCommand(terminalDTO.getVehicleDTO().getId(),
-                                                                terminalDTO.getTerminalType().getId());
+        CreateTerminalCommand command = new CreateTerminalCommand(terminalDTO.getVehicle().getId(),
+                                                                  terminalDTO.getTerminalType().getId());
         CreateTerminalResult result = commandExecutor.execute(command);
         return result.getTerminalDTO();
     }

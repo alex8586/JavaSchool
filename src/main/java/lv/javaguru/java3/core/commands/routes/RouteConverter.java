@@ -1,7 +1,7 @@
 package lv.javaguru.java3.core.commands.routes;
 
 
-import lv.javaguru.java3.core.commands.transportTypes.TransportTypeConverter;
+import lv.javaguru.java3.core.commands.routes.transportTypes.TransportTypeConverter;
 import lv.javaguru.java3.core.domain.Route;
 import lv.javaguru.java3.integrations.rest.dto.RouteDTO;
 import lv.javaguru.java3.integrations.rest.dto.RouteDTOBuilder;
