@@ -29,7 +29,7 @@ public class DispatchCommandHandler implements DomainCommandHandler<DispatchComm
     VehicleService vehicleService;
 
     @Autowired
-    TripConverter tripConverter;
+    DispatchConverter dispatchConverter;
 
 
     @Override
@@ -39,12 +39,10 @@ public class DispatchCommandHandler implements DomainCommandHandler<DispatchComm
             throw new IllegalArgumentException();
 
         Vehicle vehicle = terminal.getVehicle();
+        Trip oldTrip = vehicle.getCurrentTrip();
         Trip newTrip = vehicleService.revolveTrip(vehicle);
-
-        DispatchDTO dispatchDTO = new DispatchDTO();
-        if(vehicle.getCurrentTrip()!= null)
-            dispatchDTO.setOldTrip(tripConverter.convert(vehicle.getCurrentTrip()));
-        dispatchDTO.setNewTrip(tripConverter.convert(newTrip));
+        
+        DispatchDTO dispatchDTO = dispatchConverter.convert(oldTrip,newTrip);
         return new DispatchResult(dispatchDTO);
     }
 
