@@ -6,13 +6,10 @@ import lv.javaguru.java3.core.domain.*;
 import lv.javaguru.java3.core.domain.tickets.*;
 import lv.javaguru.java3.core.services.vehicle.VehicleService;
 import org.hibernate.SessionFactory;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.stereotype.Component;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.util.Date;
 import java.util.Random;
 
 @Component
@@ -131,7 +128,7 @@ public class MotherOfObjects {
     }
 
     public void addOneTimer(Token token , Trip trip){
-        OneTimer oneTimer = new OneTimer();
+        OneTimeTicket oneTimer = new OneTimeTicket();
         Terminal sampleTerminal = getSampleTerminal();
         oneTimer.setIssueTerminal(sampleTerminal);
         oneTimer.setTrip(trip);
@@ -142,7 +139,7 @@ public class MotherOfObjects {
     }
 
     public void addPrepaidRide(Token token, int rides){
-        PrepaidRide prepaidRide = new PrepaidRide();
+        PrepaidRideTicket prepaidRide = new PrepaidRideTicket();
         prepaidRide.setIssueTerminal(getSampleTerminal());
         prepaidRide.setBalance(rides);
         prepaidRide.setTokenId(token.getId());

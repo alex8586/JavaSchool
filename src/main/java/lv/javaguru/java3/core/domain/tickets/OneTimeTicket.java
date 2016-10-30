@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="one_timers")
 @PrimaryKeyJoinColumn(name="ticket_id" , referencedColumnName = "id")
-public class OneTimer extends Ticket{
+public class OneTimeTicket extends Ticket{
 
     @ManyToOne(fetch = FetchType.LAZY)
     Trip trip;
@@ -22,7 +22,7 @@ public class OneTimer extends Ticket{
 
     @Override
     public String toString() {
-        return "OneTimer{" +
+        return "OneTimeTicket{" +
                 "trip=" + trip +
                 " " + super.toString() +
                 '}';

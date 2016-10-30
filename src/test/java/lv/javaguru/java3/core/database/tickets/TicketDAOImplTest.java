@@ -1,15 +1,9 @@
 package lv.javaguru.java3.core.database.tickets;
 
 import lv.javaguru.java3.core.database.*;
-import lv.javaguru.java3.core.domain.TerminalType;
 import lv.javaguru.java3.core.domain.tickets.Token;
 import lv.javaguru.java3.core.domain.Trip;
-import lv.javaguru.java3.core.domain.Vehicle;
-import lv.javaguru.java3.core.domain.tickets.OneTimer;
-import lv.javaguru.java3.core.domain.tickets.PrepaidRide;
-import lv.javaguru.java3.core.domain.Terminal;
 import lv.javaguru.java3.core.domain.tickets.Ticket;
-import lv.javaguru.java3.core.services.vehicle.VehicleService;
 import org.hibernate.SessionFactory;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;

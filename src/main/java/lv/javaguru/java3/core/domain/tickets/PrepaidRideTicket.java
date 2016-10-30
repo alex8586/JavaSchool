@@ -8,7 +8,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="prepaid_rides")
 @PrimaryKeyJoinColumn(name="ticket_id" , referencedColumnName = "id")
-public class PrepaidRide extends Ticket {
+public class PrepaidRideTicket extends Ticket {
 
     @Column(name="balance")
     private int balance;
@@ -22,7 +22,7 @@ public class PrepaidRide extends Ticket {
 
     @Override
     public String toString() {
-        return "PrepaidRide{" +
+        return "PrepaidRideTicket{" +
                 "balance=" + balance +
                 " " + super.toString() +
                 '}';
