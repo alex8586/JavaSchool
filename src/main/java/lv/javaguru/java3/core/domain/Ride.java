@@ -1,5 +1,6 @@
 package lv.javaguru.java3.core.domain;
 
+import lv.javaguru.java3.core.domain.tickets.Token;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 

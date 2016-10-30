@@ -7,44 +7,35 @@
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
     <changeSet id="1" author="algis" context="main">
-        <createTable tableName="tickets">
-            <column name="id" type="BIGINT" autoIncrement="true" startWith="1">
+        <createTable tableName="one_timers">
+            <column name="ticket_id" type="BIGINT">
                 <constraints primaryKey="true" nullable="false" />
             </column>
 
-            <column name="token_id" type="BIGINT">
+            <column name="trip_id" type="BIGINT" defaultValue="0">
                 <constraints nullable="false"/>
             </column>
-
-            <column name="issue_terminal_id" type="BIGINT">
-                <constraints nullable="false"/>
-            </column>
-
         </createTable>
     </changeSet>
 
     <changeSet id="2" author="algis" >
-        <addForeignKeyConstraint baseColumnNames="token_id"
-                                 baseTableName="tickets"
-                                 constraintName="fk_token_of_ticket"
+        <addForeignKeyConstraint baseColumnNames="ticket_id"
+                                 baseTableName="one_timers"
+                                 constraintName="fk_onetimer_tickets"
                                  onDelete="RESTRICT"
                                  onUpdate="RESTRICT"
                                  referencedColumnNames="id"
-                                 referencedTableName="tokens"/>
+                                 referencedTableName="tickets"/>
     </changeSet>
 
     <changeSet id="3" author="algis" >
-        <addForeignKeyConstraint baseColumnNames="issue_terminal_id"
-                                 baseTableName="tickets"
-                                 constraintName="fk_issue_terminal_of_ticket"
+        <addForeignKeyConstraint baseColumnNames="trip_id"
+                                 baseTableName="one_timers"
+                                 constraintName="fk_onetimer_trip"
                                  onDelete="RESTRICT"
                                  onUpdate="RESTRICT"
                                  referencedColumnNames="id"
-                                 referencedTableName="terminals"/>
-    </changeSet>
-
-    <changeSet id="4" author="algis">
-        <createSequence sequenceName="tickets_seq" />
+                                 referencedTableName="trips"/>
     </changeSet>
 
 

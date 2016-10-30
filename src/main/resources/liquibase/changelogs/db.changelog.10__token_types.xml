@@ -37,7 +37,7 @@
     </changeSet>
 
     <changeSet id="3" author="algis">
-        <createSequence sequenceName="token_types" startValue="100"/>
+        <createSequence sequenceName="token_types_seq" startValue="100"/>
     </changeSet>
 
 </databaseChangeLog>

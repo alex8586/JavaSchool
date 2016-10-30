@@ -23,5 +23,8 @@
 
     <include file="liquibase/changelogs/db.changelog.14__trips_active_column.xml"/>
 
+    <include file="liquibase/changelogs/db.changelog.15__prepaid_rides.xml"/>
+    <include file="liquibase/changelogs/db.changelog.16__one_timers.xml"/>
+
 
 </databaseChangeLog>

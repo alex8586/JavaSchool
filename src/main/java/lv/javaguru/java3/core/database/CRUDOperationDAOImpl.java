@@ -16,7 +16,6 @@ public abstract class CRUDOperationDAOImpl<E, K extends Serializable> implements
 
     protected Class daoType;
 
-
     public CRUDOperationDAOImpl() {
         daoType = (Class) ((ParameterizedType) getClass().getGenericSuperclass())
                 .getActualTypeArguments()[0];
@@ -25,7 +24,6 @@ public abstract class CRUDOperationDAOImpl<E, K extends Serializable> implements
     protected Session getCurrentSession() {
         return sessionFactory.getCurrentSession();
     }
-
 
     @Override
     public void create(E entity) {
