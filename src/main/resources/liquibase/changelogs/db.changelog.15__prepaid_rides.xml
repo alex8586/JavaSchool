@@ -29,4 +29,11 @@
                                  referencedTableName="tickets"/>
     </changeSet>
 
+    <changeSet id="3" author="alex">
+        <insert tableName="prepaid_rides">
+            <column name="ticket_id">1</column>
+            <column name="balance">78</column>
+        </insert>
+    </changeSet>
+
 </databaseChangeLog>

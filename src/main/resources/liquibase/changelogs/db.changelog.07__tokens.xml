@@ -20,8 +20,13 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="3" author="alex">
+    <changeSet id="2" author="alex">
         <createSequence sequenceName="tokens_seq" startValue="100"/>
     </changeSet>
 
+    <changeSet id="3" author="alex">
+        <insert tableName="tokens">
+            <column name="token_type_id">2</column>
+        </insert>
+    </changeSet>
 </databaseChangeLog>
