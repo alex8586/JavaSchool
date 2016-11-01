@@ -17,7 +17,7 @@ public class Ticket {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "issue_terminal_id")
-    Terminal issueTerminal;
+    private Terminal issueTerminal;
 
     @Column(name = "token_id")
     private long tokenId;

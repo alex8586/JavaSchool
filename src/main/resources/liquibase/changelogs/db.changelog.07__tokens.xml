@@ -17,6 +17,8 @@
                 <constraints nullable="false" unique="true" />
             </column>
 
+            <column name="trip_id" type="BIGINT"/>
+
         </createTable>
     </changeSet>
 

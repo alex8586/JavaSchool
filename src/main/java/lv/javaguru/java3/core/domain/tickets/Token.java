@@ -1,7 +1,5 @@
 package lv.javaguru.java3.core.domain.tickets;
 
-import lv.javaguru.java3.core.domain.tickets.Ticket;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,12 +15,14 @@ public class Token {
     @Column(name="id", nullable = false)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    TokenType tokenType;
+    @ManyToOne(fetch = FetchType.EAGER)
+    private TokenType tokenType;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "token_id")
-    List<Ticket> tickets = new ArrayList<>();
+    private List<Ticket> tickets = new ArrayList<>();
+
+    private Long tripId;
 
     public List<Ticket> getTickets() {
         return tickets;
@@ -48,5 +48,23 @@ public class Token {
 
     public void setTokenType(TokenType tokenType) {
         this.tokenType = tokenType;
+    }
+
+    public Long getTripId() {
+        return tripId;
+    }
+
+    public void setTripId(Long tripId) {
+        this.tripId = tripId;
+    }
+
+    @Override
+    public String toString() {
+        return "Token{" +
+                "id=" + id +
+                ", tokenType=" + tokenType +
+                ", tickets=" + tickets +
+                ", tripId=" + tripId +
+                '}';
     }
 }
