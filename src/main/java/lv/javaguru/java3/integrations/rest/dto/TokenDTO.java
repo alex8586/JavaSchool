@@ -7,7 +7,7 @@ public class TokenDTO {
     private TokenTypeDTO tokenTypeDTO;
     private int balance;
     private Date date;
-    private Long rideId;
+    private RideDTO rideDTO;
 
     public TokenTypeDTO getTokenTypeDTO() {
         return tokenTypeDTO;
@@ -33,11 +33,12 @@ public class TokenDTO {
         this.date = date;
     }
 
-    public Long getRideId() {
-        return rideId;
+
+    public RideDTO getRideDTO() {
+        return rideDTO;
     }
 
-    public void setRideId(Long rideId) {
-        this.rideId = rideId;
+    public void setRideDTO(RideDTO rideDTO) {
+        this.rideDTO = rideDTO;
     }
 }

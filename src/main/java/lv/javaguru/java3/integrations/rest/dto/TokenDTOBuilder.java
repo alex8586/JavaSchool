@@ -7,7 +7,7 @@ public class TokenDTOBuilder {
     private TokenTypeDTO tokenTypeDTO;
     private int balance;
     private Date date;
-    private Long rideId;
+    private RideDTO rideDTO;
 
     private TokenDTOBuilder(){
 
@@ -22,7 +22,7 @@ public class TokenDTOBuilder {
         tokenDTO.setTokenTypeDTO(tokenTypeDTO);
         tokenDTO.setBalance(balance);
         tokenDTO.setDate(date);
-        tokenDTO.setRideId(rideId);
+        tokenDTO.setRideDTO(rideDTO);
         return tokenDTO;
     }
 
@@ -41,8 +41,8 @@ public class TokenDTOBuilder {
         return this;
     }
 
-    public TokenDTOBuilder withRideId(Long rideId){
-        this.rideId = rideId;
+    public TokenDTOBuilder withRideDTO(RideDTO rideDTO){
+        this.rideDTO = rideDTO;
         return this;
     }
 

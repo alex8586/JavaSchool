@@ -7,6 +7,7 @@ import lv.javaguru.java3.core.domain.*;
 import lv.javaguru.java3.core.domain.tickets.Token;
 import lv.javaguru.java3.core.services.DomainCommandHandler;
 import lv.javaguru.java3.core.services.ride.RideFactory;
+import lv.javaguru.java3.integrations.rest.dto.RideDTO;
 import lv.javaguru.java3.integrations.rest.dto.TokenDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -42,7 +43,10 @@ public class TripRegistrationCommandHandler
         rideList.add(ride);
 
         TokenDTO tokenDTO = tokenDTOConverter.convert(token, ride);
-
+        RideDTO rideDTO = tokenDTO.getRideDTO();
+//        uncomment downhere and will get dead lock
+//        System.out.println("rideDto get id " + rideDTO.getId());
+//        System.out.println("rideDto get token " + rideDTO.getToken().toString());
         return new TripRegistrationResult(tokenDTO);
     }
 
