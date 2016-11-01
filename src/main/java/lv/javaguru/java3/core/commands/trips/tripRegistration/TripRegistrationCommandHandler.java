@@ -1,6 +1,8 @@
 package lv.javaguru.java3.core.commands.trips.tripRegistration;
 
-import lv.javaguru.java3.core.commands.trips.TokenDTOConverter;
+import lv.javaguru.java3.core.commands.trips.RideConverter;
+import lv.javaguru.java3.core.commands.trips.TokenConverter;
+import lv.javaguru.java3.core.database.RideDAO;
 import lv.javaguru.java3.core.database.TerminalDAO;
 import lv.javaguru.java3.core.database.TokenDAO;
 import lv.javaguru.java3.core.domain.*;
@@ -23,32 +25,39 @@ public class TripRegistrationCommandHandler
     @Autowired
     private TokenDAO tokenDAO;
     @Autowired
-    private RideFactory rideFactory;
+    private RideDAO rideDAO;
     @Autowired
-    private TokenDTOConverter tokenDTOConverter;
+    private RideConverter rideConverter;
+    @Autowired
+    private RideFactory rideFactory;
 
     @Override
     public TripRegistrationResult execute(TripRegistrationCommand command) {
         Terminal terminal = terminalDAO.getRequired(command.getTerminalId());
-        TerminalType terminalType = terminal.getTerminalType();
-        if(terminalType.getId() != 1){
-//            return error - you can't register ticket on this kind of terminal
+
+        if(terminal.getTerminalType().getId() != 1){
+            //return error - you can't register ticket on this kind of terminal
         }
-        Vehicle currentVehicle = terminal.getVehicle();
-        Trip trip = currentVehicle.getCurrentTrip();
 
+        Trip trip = terminal.getVehicle().getCurrentTrip();
         Token token = tokenDAO.getById(command.getTokenId());
-        List<Ride> rideList = trip.getRides();
 
-        Ride ride = rideFactory.create(token);
-        rideList.add(ride);
+        //This should be separated service which used by controllers as well
+        Ride ride = null;
+        for (Ride existingRide : trip.getRides()) {
+            if(ride.getTridId() == trip.getId()) {
+                ride = existingRide;
+                break;
+            }
+        }
+        //This should be separated service which used by controllers as well
 
-        TokenDTO tokenDTO = tokenDTOConverter.convert(token, ride);
-        RideDTO rideDTO = tokenDTO.getRideDTO();
-//        uncomment downhere and will get dead lock
-//        System.out.println("rideDto get id " + rideDTO.getId());
-//        System.out.println("rideDto get token " + rideDTO.getToken().toString());
-        return new TripRegistrationResult(tokenDTO);
+        if(ride == null){
+            ride = rideFactory.create(trip,token);
+            trip.getRides().add(ride);
+        }
+        RideDTO rideDTO = rideConverter.convert(ride);
+        return new TripRegistrationResult(rideDTO);
     }
 
     @Override

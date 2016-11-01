@@ -16,6 +16,9 @@ public class Ride {
     @Column(name="id", nullable = false)
     private Long id;
 
+    @Column(name="trip_id")
+    private Long tridId;
+
     @ManyToOne(fetch = FetchType.EAGER)
     @Fetch(FetchMode.JOIN)
     Token token;
@@ -25,6 +28,14 @@ public class Ride {
     }
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getTridId() {
+        return tridId;
+    }
+
+    public void setTridId(Long tridId) {
+        this.tridId = tridId;
     }
 
     public Token getToken() {

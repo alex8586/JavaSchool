@@ -1,25 +1,30 @@
 package lv.javaguru.java3.integrations.rest.dto;
 
-import lv.javaguru.java3.core.domain.tickets.Token;
-
 public class RideDTO {
 
     private Long id;
-    private Token token;
+    private Long tripId;
+    private TokenDTO token;
 
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
 
-    public Token getToken() {
-        return token;
+    public Long getTripId() {
+        return tripId;
     }
 
-    public void setToken(Token token) {
+    public void setTripId(Long tripId) {
+        this.tripId = tripId;
+    }
+
+    public TokenDTO getToken() {
+        return token;
+    }
+    public void setToken(TokenDTO token) {
         this.token = token;
     }
 }

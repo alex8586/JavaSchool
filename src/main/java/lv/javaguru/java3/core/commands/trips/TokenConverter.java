@@ -14,22 +14,16 @@ import java.util.Date;
 import static lv.javaguru.java3.integrations.rest.dto.TokenDTOBuilder.createTokenDTO;
 
 @Component
-public class TokenDTOConverter {
+public class TokenConverter {
 
     @Autowired
     private TokenTypeConverter tokenTypeConverter;
-    @Autowired
-    private RideConverter rideConverter;
 
-    public TokenDTO convert(Token token, Ride ride){
-        TokenType tokenType = token.getTokenType();
-        TokenTypeDTO tokenTypeDTO = tokenTypeConverter.convert(tokenType);
-        RideDTO rideDTO = rideConverter.convert(ride);
+    public TokenDTO convert(Token token){
 
         return createTokenDTO()
-                .withTokenTypeDTO(tokenTypeDTO)
+                .withTokenTypeDTO(tokenTypeConverter.convert(token.getTokenType()))
                 .withDate(new Date())
-                .withRideDTO(rideDTO)
                 .build();
     }
 }

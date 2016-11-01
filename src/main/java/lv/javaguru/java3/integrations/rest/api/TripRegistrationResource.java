@@ -1,5 +1,6 @@
 package lv.javaguru.java3.integrations.rest.api;
 
+import lv.javaguru.java3.integrations.rest.dto.RideDTO;
 import lv.javaguru.java3.integrations.rest.dto.TokenDTO;
 
 import javax.ws.rs.*;
@@ -13,6 +14,6 @@ public interface TripRegistrationResource {
     @Consumes(APPLICATION_JSON)
     @Produces(APPLICATION_JSON)
     @Path("/terminal/{terminalId}/token/{tokenId}")
-    TokenDTO registerTrip(@PathParam("terminalId") Long terminalId,
-                          @PathParam("tokenId") Long tokenId);
+    RideDTO registerTrip(@PathParam("terminalId") Long terminalId,
+                         @PathParam("tokenId") Long tokenId);
 }

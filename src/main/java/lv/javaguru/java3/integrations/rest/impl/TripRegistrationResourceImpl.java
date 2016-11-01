@@ -5,6 +5,7 @@ import lv.javaguru.java3.core.commands.trips.tripRegistration.TripRegistrationRe
 import lv.javaguru.java3.core.services.CommandExecutor;
 import lv.javaguru.java3.integrations.rest.api.RESTResource;
 import lv.javaguru.java3.integrations.rest.api.TripRegistrationResource;
+import lv.javaguru.java3.integrations.rest.dto.RideDTO;
 import lv.javaguru.java3.integrations.rest.dto.TokenDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -24,11 +25,11 @@ public class TripRegistrationResourceImpl implements TripRegistrationResource {
     @Consumes(APPLICATION_JSON)
     @Produces(APPLICATION_JSON)
     @Path("/terminal/{terminalId}/token/{tokenId}")
-    public TokenDTO registerTrip(@PathParam("terminalId") Long terminalId,
-                                 @PathParam("tokenId") Long tokenId) {
+    public RideDTO registerTrip(@PathParam("terminalId") Long terminalId,
+                                @PathParam("tokenId") Long tokenId) {
         TripRegistrationCommand command = new TripRegistrationCommand(terminalId, tokenId);
         TripRegistrationResult result = commandExecutor.execute(command);
-        return result.getTokenDTO();
+        return result.getRideDTO();
     }
 
 

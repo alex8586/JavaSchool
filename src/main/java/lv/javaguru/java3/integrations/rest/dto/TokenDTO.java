@@ -4,16 +4,16 @@ import java.util.Date;
 
 public class TokenDTO {
 
-    private TokenTypeDTO tokenTypeDTO;
+    private TokenTypeDTO tokenType;
     private int balance;
     private Date date;
 
     public TokenTypeDTO getTokenTypeDTO() {
-        return tokenTypeDTO;
+        return tokenType;
     }
 
     public void setTokenTypeDTO(TokenTypeDTO tokenTypeDTO) {
-        this.tokenTypeDTO = tokenTypeDTO;
+        this.tokenType = tokenTypeDTO;
     }
 
     public int getBalance() {
