@@ -7,12 +7,10 @@ public class TokenDTOBuilder {
     private TokenTypeDTO tokenTypeDTO;
     private int balance;
     private Date date;
-    private RideDTO rideDTO;
 
     private TokenDTOBuilder(){
 
     }
-
     public static TokenDTOBuilder createTokenDTO(){
         return new TokenDTOBuilder();
     }
@@ -22,7 +20,6 @@ public class TokenDTOBuilder {
         tokenDTO.setTokenTypeDTO(tokenTypeDTO);
         tokenDTO.setBalance(balance);
         tokenDTO.setDate(date);
-        tokenDTO.setRideDTO(rideDTO);
         return tokenDTO;
     }
 
@@ -38,11 +35,6 @@ public class TokenDTOBuilder {
 
     public TokenDTOBuilder withDate(Date date){
         this.date = date;
-        return this;
-    }
-
-    public TokenDTOBuilder withRideDTO(RideDTO rideDTO){
-        this.rideDTO = rideDTO;
         return this;
     }
 

@@ -7,7 +7,6 @@ public class TokenDTO {
     private TokenTypeDTO tokenTypeDTO;
     private int balance;
     private Date date;
-    private RideDTO rideDTO;
 
     public TokenTypeDTO getTokenTypeDTO() {
         return tokenTypeDTO;
@@ -31,14 +30,5 @@ public class TokenDTO {
 
     public void setDate(Date date) {
         this.date = date;
-    }
-
-
-    public RideDTO getRideDTO() {
-        return rideDTO;
-    }
-
-    public void setRideDTO(RideDTO rideDTO) {
-        this.rideDTO = rideDTO;
     }
 }

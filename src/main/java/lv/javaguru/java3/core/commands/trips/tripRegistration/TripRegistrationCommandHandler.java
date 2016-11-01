@@ -36,6 +36,7 @@ public class TripRegistrationCommandHandler
         }
         Vehicle currentVehicle = terminal.getVehicle();
         Trip trip = currentVehicle.getCurrentTrip();
+
         Token token = tokenDAO.getById(command.getTokenId());
         List<Ride> rideList = trip.getRides();
 
