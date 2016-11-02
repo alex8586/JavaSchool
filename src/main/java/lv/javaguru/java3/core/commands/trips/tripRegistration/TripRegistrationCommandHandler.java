@@ -9,6 +9,7 @@ import lv.javaguru.java3.core.domain.*;
 import lv.javaguru.java3.core.domain.tickets.Token;
 import lv.javaguru.java3.core.services.DomainCommandHandler;
 import lv.javaguru.java3.core.services.ride.RideFactory;
+import lv.javaguru.java3.core.services.trip.ExistingRideExtractorImpl;
 import lv.javaguru.java3.integrations.rest.dto.RideDTO;
 import lv.javaguru.java3.integrations.rest.dto.TokenDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,33 +26,25 @@ public class TripRegistrationCommandHandler
     @Autowired
     private TokenDAO tokenDAO;
     @Autowired
-    private RideDAO rideDAO;
-    @Autowired
     private RideConverter rideConverter;
     @Autowired
     private RideFactory rideFactory;
+
+    @Autowired
+    private ExistingRideExtractorImpl existingRideExtractor;
 
     @Override
     public TripRegistrationResult execute(TripRegistrationCommand command) {
         Terminal terminal = terminalDAO.getRequired(command.getTerminalId());
 
         if(terminal.getTerminalType().getId() != 1){
-            //return error - you can't register ticket on this kind of terminal
+            throw new IllegalArgumentException();
         }
 
         Trip trip = terminal.getVehicle().getCurrentTrip();
         Token token = tokenDAO.getById(command.getTokenId());
 
-        //This should be separated service which used by controllers as well
-        Ride ride = null;
-        for (Ride existingRide : trip.getRides()) {
-            if(ride.getTridId() == trip.getId()) {
-                ride = existingRide;
-                break;
-            }
-        }
-        //This should be separated service which used by controllers as well
-
+        Ride ride = existingRideExtractor.extract(trip,token);
         if(ride == null){
             ride = rideFactory.create(trip,token);
             trip.getRides().add(ride);
