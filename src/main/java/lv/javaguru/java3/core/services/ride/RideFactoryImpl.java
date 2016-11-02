@@ -16,7 +16,7 @@ public class RideFactoryImpl implements RideFactory {
     @Override
     public Ride create(Trip trip, Token token) {
         Ride ride = new Ride();
-        ride.setTridId(trip.getId());
+        ride.setTripId(trip.getId());
         ride.setToken(token);
         rideDAO.create(ride);
         return ride;

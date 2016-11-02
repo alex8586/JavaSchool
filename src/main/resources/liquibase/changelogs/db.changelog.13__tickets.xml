@@ -52,6 +52,10 @@
             <column name="token_id">1</column>
             <column name="issue_terminal_id">1</column>
         </insert>
+        <insert tableName="tickets">
+            <column name="token_id">2</column>
+            <column name="issue_terminal_id">1</column>
+        </insert>
     </changeSet>
 
 

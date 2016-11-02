@@ -59,7 +59,7 @@ public class Trip {
     public String toString() {
         return "Trip{" +
                 "id=" + id +
-                "vehicleId=" + vehicleId +
+                ", vehicleId=" + vehicleId +
                 ", isOngoing=" + isOngoing +
                 '}';
     }

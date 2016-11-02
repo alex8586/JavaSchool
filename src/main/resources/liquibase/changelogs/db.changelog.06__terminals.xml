@@ -63,6 +63,11 @@
             <column name="terminal_type_id">3</column>
         </insert>
 
+        <insert tableName="terminals">
+            <column name="vehicle_id">null</column>
+            <column name="terminal_type_id">2</column>
+        </insert>
+
     </changeSet>
 
     <changeSet id="5" author="alex">

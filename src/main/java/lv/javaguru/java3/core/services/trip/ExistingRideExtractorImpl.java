@@ -10,7 +10,8 @@ public class ExistingRideExtractorImpl implements ExistingRideExtractor{
 
     public Ride extract(Trip trip, Token token){
         for (Ride existingRide : trip.getRides()) {
-            if(existingRide.getTridId() == trip.getId()) {
+            System.out.println("existing ride : " + existingRide);
+            if(existingRide.getToken().getId() == token.getId()) {
                 return existingRide;
             }
         }

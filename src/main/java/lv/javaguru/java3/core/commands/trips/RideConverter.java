@@ -17,7 +17,7 @@ public class RideConverter {
     public RideDTO convert(Ride ride){
         return createRideDTO()
                 .withId(ride.getId())
-                .withTripId(ride.getTridId())
+                .withTripId(ride.getTripId())
                 .withTokenDTO(tokenConverter.convert(ride.getToken()))
                 .build();
     }

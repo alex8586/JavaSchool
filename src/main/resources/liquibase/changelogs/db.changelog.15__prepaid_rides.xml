@@ -34,6 +34,10 @@
             <column name="ticket_id">1</column>
             <column name="balance">78</column>
         </insert>
+        <insert tableName="prepaid_rides">
+            <column name="ticket_id">2</column>
+            <column name="balance">42</column>
+        </insert>
     </changeSet>
 
 </databaseChangeLog>

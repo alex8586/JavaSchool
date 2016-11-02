@@ -20,7 +20,6 @@ public class TokenConverter {
     private TokenTypeConverter tokenTypeConverter;
 
     public TokenDTO convert(Token token){
-
         return createTokenDTO()
                 .withTokenTypeDTO(tokenTypeConverter.convert(token.getTokenType()))
                 .withDate(new Date())

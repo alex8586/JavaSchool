@@ -44,9 +44,13 @@ public class TripRegistrationCommandHandler
         Trip trip = terminal.getVehicle().getCurrentTrip();
         Token token = tokenDAO.getById(command.getTokenId());
 
+        System.out.println("trip" + trip);
+        System.out.println("token " + token);
         Ride ride = existingRideExtractor.extract(trip,token);
+        System.out.println("ride " + ride);
         if(ride == null){
             ride = rideFactory.create(trip,token);
+            System.out.println("new ride " + ride);
             trip.getRides().add(ride);
         }
         RideDTO rideDTO = rideConverter.convert(ride);
