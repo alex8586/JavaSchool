@@ -44,7 +44,7 @@
     </changeSet>
 
     <changeSet id="4" author="algis">
-        <createSequence sequenceName="tickets_seq" />
+        <createSequence sequenceName="tickets_seq" startValue="100"/>
     </changeSet>
 
     <changeSet id="5" author="alex">
