@@ -6,8 +6,7 @@ import javax.persistence.*;
 @Table(name="routes")
 public class Route {
     @Id
-    @GeneratedValue(generator = "routes_seq", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "routes_seq", sequenceName = "routes_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id", nullable = false)
     private Long id;
 

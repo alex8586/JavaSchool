@@ -54,9 +54,4 @@
         </insert>
     </changeSet>
 
-    <changeSet id="4" author="algis" context="main">
-        <createSequence sequenceName="vehicle_seq" startValue="100"/>
-    </changeSet>
-
-
 </databaseChangeLog>

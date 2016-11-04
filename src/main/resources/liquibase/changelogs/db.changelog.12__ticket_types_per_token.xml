@@ -86,9 +86,4 @@
         </insert>
     </changeSet>
 
-
-    <changeSet id="5" author="algis">
-        <createSequence sequenceName="ticket_types_per_token_seq" startValue="100"/>
-    </changeSet>
-
 </databaseChangeLog>

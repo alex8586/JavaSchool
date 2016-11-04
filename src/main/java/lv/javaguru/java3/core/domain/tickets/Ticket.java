@@ -10,8 +10,7 @@ import javax.persistence.*;
 @Inheritance(strategy= InheritanceType.JOINED)
 public class Ticket {
     @Id
-    @GeneratedValue(generator = "tickets_seq", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "tickets_seq", sequenceName = "tickets_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id", nullable = false)
     private Long id;
 

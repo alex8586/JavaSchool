@@ -1,7 +1,5 @@
 package lv.javaguru.java3.core.domain.tickets;
 
-import org.springframework.stereotype.Component;
-
 import javax.persistence.*;
 
 
@@ -10,8 +8,7 @@ import javax.persistence.*;
 public class TokenType {
 
     @Id
-    @GeneratedValue(generator = "token_types_seq", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "token_types_seq", sequenceName = "token_types_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id", nullable = false)
     private Long id;
 

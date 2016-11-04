@@ -8,14 +8,14 @@
 
     <changeSet id="1" author="algis" >
         <addColumn tableName="trips">
-            <column name="is_ongoing" type="BOOLEAN" defaultValue="true"/>
+            <column name="is_ongoing" type="BOOLEAN" defaultValueBoolean="true"/>
         </addColumn>
     </changeSet>
 
     <changeSet id="2" author="algis">
         <insert tableName="trips">
             <column name="vehicle_id" value="1"/>
-            <column name="is_ongoing" value="false"/>
+            <column name="is_ongoing" valueBoolean="false"/>
         </insert>
         <insert tableName="trips">
             <column name="vehicle_id" value="1"/>

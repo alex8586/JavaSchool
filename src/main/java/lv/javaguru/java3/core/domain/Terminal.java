@@ -7,8 +7,7 @@ import javax.persistence.*;
 public class Terminal {
 
     @Id
-    @GeneratedValue(generator = "terminals_sec", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "terminals_sec", sequenceName = "terminals_sec", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id", nullable = false)
     private Long id;
 

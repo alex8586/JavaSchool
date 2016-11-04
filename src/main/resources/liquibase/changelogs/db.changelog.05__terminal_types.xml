@@ -42,7 +42,4 @@ xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
     </insert>
 </changeSet>
 
-    <changeSet id="3" author="alex">
-        <createSequence sequenceName="terminal_types_sec" startValue="100"/>
-    </changeSet>
 </databaseChangeLog>

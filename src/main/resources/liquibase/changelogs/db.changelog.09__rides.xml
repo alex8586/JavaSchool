@@ -45,8 +45,4 @@
                                  referencedTableName="tokens"/>
     </changeSet>
 
-    <changeSet id="4" author="dmitry" context="main">
-        <createSequence sequenceName="rides_seq" startValue="100"/>
-    </changeSet>
-
 </databaseChangeLog>

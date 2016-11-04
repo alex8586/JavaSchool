@@ -10,8 +10,7 @@ import java.util.List;
 public class Token {
 
     @Id
-    @GeneratedValue(generator = "tokens_seq", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "tokens_seq", sequenceName = "tokens_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id", nullable = false)
     private Long id;
 

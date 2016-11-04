@@ -65,8 +65,4 @@
 
     </changeSet>
 
-    <changeSet id="5" author="alex">
-        <createSequence sequenceName="terminals_sec" startValue="100"/>
-    </changeSet>
-
 </databaseChangeLog>

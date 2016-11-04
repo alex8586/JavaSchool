@@ -11,8 +11,7 @@ import javax.persistence.*;
 public class Ride {
 
     @Id
-    @GeneratedValue(generator = "rides_seq", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "rides_seq", sequenceName = "rides_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id", nullable = false)
     private Long id;
 

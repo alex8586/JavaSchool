@@ -7,8 +7,7 @@ import javax.persistence.*;
 public class TransportType {
 
     @Id
-    @GeneratedValue(generator = "transport_types_seq", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "transport_types_seq", sequenceName = "transport_types_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id", nullable = false)
     private Long id;
 

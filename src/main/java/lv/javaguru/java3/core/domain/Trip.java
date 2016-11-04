@@ -8,8 +8,7 @@ import java.util.List;
 public class Trip {
 
     @Id
-    @GeneratedValue(generator = "trips_seq", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "trips_seq", sequenceName = "trips_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id", nullable = false)
     private Long id;
 
