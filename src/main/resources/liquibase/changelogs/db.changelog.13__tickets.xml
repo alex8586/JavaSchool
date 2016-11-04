@@ -43,12 +43,4 @@
                                  referencedTableName="terminals"/>
     </changeSet>
 
-    <changeSet id="5" author="alex">
-        <insert tableName="tickets">
-            <column name="token_id">1</column>
-            <column name="issue_terminal_id">1</column>
-        </insert>
-    </changeSet>
-
-
 </databaseChangeLog>

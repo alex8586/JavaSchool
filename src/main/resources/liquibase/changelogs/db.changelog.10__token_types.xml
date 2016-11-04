@@ -18,22 +18,4 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="2" author="algis" context="main">
-        <insert tableName="token_types">
-            <column name="name" value="paper"/>
-        </insert>
-        <insert tableName="token_types">
-            <column name="name" value="smart card"/>
-        </insert>
-        <insert tableName="token_types">
-            <column name="name" value="anonymous"/>
-        </insert>
-        <insert tableName="token_types">
-            <column name="name" value="personified"/>
-        </insert>
-        <insert tableName="token_types">
-            <column name="name" value="bankcard"/>
-        </insert>
-    </changeSet>
-
 </databaseChangeLog>

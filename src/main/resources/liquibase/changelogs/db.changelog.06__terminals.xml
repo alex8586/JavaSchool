@@ -43,26 +43,4 @@
                                  referencedTableName="terminal_types"/>
     </changeSet>
 
-    <changeSet id="4" author="alex">
-
-        <insert tableName="terminals">
-            <column name="vehicle_id">1</column>
-            <column name="terminal_type_id">1</column>
-        </insert>
-        <insert tableName="terminals">
-            <column name="vehicle_id">1</column>
-            <column name="terminal_type_id">3</column>
-        </insert>
-
-        <insert tableName="terminals">
-            <column name="vehicle_id">2</column>
-            <column name="terminal_type_id">1</column>
-        </insert>
-        <insert tableName="terminals">
-            <column name="vehicle_id">2</column>
-            <column name="terminal_type_id">3</column>
-        </insert>
-
-    </changeSet>
-
 </databaseChangeLog>

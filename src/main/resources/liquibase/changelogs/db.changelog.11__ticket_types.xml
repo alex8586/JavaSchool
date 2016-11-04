@@ -18,19 +18,4 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="2" author="algis" context="main">
-        <insert tableName="ticket_types">
-            <column name="name" value="one-time ride"/>
-        </insert>
-        <insert tableName="ticket_types">
-            <column name="name" value="prepaid card"/>
-        </insert>
-        <insert tableName="ticket_types">
-            <column name="name" value="season ticket"/>
-        </insert>
-        <insert tableName="ticket_types">
-            <column name="name" value="postpaid ride"/>
-        </insert>
-    </changeSet>
-
 </databaseChangeLog>

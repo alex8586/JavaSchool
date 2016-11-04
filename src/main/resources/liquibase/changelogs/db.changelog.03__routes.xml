@@ -36,41 +36,4 @@
                                  referencedTableName="transport_types"/>
     </changeSet>
 
-    <changeSet id="3" author="algis" context="main">
-
-        <insert tableName="routes">
-            <column name="name" value="Oceania - Eurasia"/>
-            <column name="code" value ="A1"/>
-            <column name="transport_type_id" value ="1"/>
-        </insert>
-        <insert tableName="routes">
-            <column name="name" value="Oceania - Eastasia"/>
-            <column name="code" value ="A2"/>
-            <column name="transport_type_id" value ="1"/>
-        </insert>
-
-        <insert tableName="routes">
-            <column name="name" value="War - Peace"/>
-            <column name="code" value ="Tb1"/>
-            <column name="transport_type_id" value ="2"/>
-        </insert>
-        <insert tableName="routes">
-            <column name="name" value="Freedom - Slavery"/>
-            <column name="code" value ="Tb2"/>
-            <column name="transport_type_id" value ="2"/>
-        </insert>
-        <insert tableName="routes">
-            <column name="name" value="Ignorance - Peace"/>
-            <column name="code" value ="Tb3"/>
-            <column name="transport_type_id" value ="2"/>
-        </insert>
-
-        <insert tableName="routes">
-            <column name="name" value="Bellyfeel - Duckspeak"/>
-            <column name="code" value ="Tw1"/>
-            <column name="transport_type_id" value ="3"/>
-        </insert>
-
-    </changeSet>
-
 </databaseChangeLog>

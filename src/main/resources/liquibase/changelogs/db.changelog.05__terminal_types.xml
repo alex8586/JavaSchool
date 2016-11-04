@@ -20,26 +20,4 @@ xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
     </createTable>
 </changeSet>
 
-<changeSet id="2" author="alex" >
-    <insert tableName="terminal_types">
-        <column name="name">Trip Registrator</column>
-    </insert>
-
-    <insert tableName="terminal_types">
-        <column name="name">Trip Control Checkout</column>
-    </insert>
-
-    <insert tableName="terminal_types">
-        <column name="name">Driver's toolbox</column>
-    </insert>
-
-    <insert tableName="terminal_types">
-        <column name="name">Outside Terminal</column>
-    </insert>
-
-    <insert tableName="terminal_types">
-        <column name="name">Office Terminal</column>
-    </insert>
-</changeSet>
-
 </databaseChangeLog>

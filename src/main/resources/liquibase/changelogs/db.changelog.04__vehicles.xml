@@ -33,25 +33,4 @@
                                  referencedTableName="routes"/>
     </changeSet>
 
-    <changeSet id="3" author="algis" context="main">
-
-        <insert tableName="vehicles">
-            <column name="car_code" value="Abus-0001"/>
-            <column name="route_id" value ="1"/>
-        </insert>
-        <insert tableName="vehicles">
-            <column name="car_code" value="Abus-0002"/>
-            <column name="route_id" value ="1"/>
-        </insert>
-        <insert tableName="vehicles">
-            <column name="car_code" value="Bbus-B0001"/>
-            <column name="route_id" value ="2"/>
-        </insert>
-
-        <insert tableName="vehicles">
-            <column name="car_code" value="Tram-T0001"/>
-            <column name="route_id" value ="6"/>
-        </insert>
-    </changeSet>
-
 </databaseChangeLog>

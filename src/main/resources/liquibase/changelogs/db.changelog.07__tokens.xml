@@ -22,9 +22,4 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="3" author="alex">
-        <insert tableName="tokens">
-            <column name="token_type_id">2</column>
-        </insert>
-    </changeSet>
 </databaseChangeLog>

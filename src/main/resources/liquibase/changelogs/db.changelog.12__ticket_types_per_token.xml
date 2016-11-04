@@ -42,48 +42,4 @@
                                  referencedTableName="ticket_types"/>
     </changeSet>
 
-    <changeSet id="4" author="algis" context="main">
-        <!-- paper ticket can contain one-times -->
-        <insert tableName="ticket_types_per_token">
-            <column name="token_type_id" value="1"/>
-            <column name="ticket_type_id" value="1"/>
-        </insert>
-
-        <!-- smart cards can contain prepaid rides -->
-        <insert tableName="ticket_types_per_token">
-            <column name="token_type_id" value="2"/>
-            <column name="ticket_type_id" value="2"/>
-        </insert>
-
-        <!-- anonymous cards can contain prepaid rides and/or seasoned tickets -->
-        <insert tableName="ticket_types_per_token">
-            <column name="token_type_id" value="3"/>
-            <column name="ticket_type_id" value="2"/>
-        </insert>
-        <insert tableName="ticket_types_per_token">
-            <column name="token_type_id" value="3"/>
-            <column name="ticket_type_id" value="3"/>
-        </insert>
-
-        <!-- personified cards can contain prepaid rides and/or seasoned tickets -->
-        <insert tableName="ticket_types_per_token">
-            <column name="token_type_id" value="4"/>
-            <column name="ticket_type_id" value="2"/>
-        </insert>
-        <insert tableName="ticket_types_per_token">
-            <column name="token_type_id" value="4"/>
-            <column name="ticket_type_id" value="3"/>
-        </insert>
-
-        <!-- tokens integrated with bank card can contain seasoned tickets and postpaid rides -->
-        <insert tableName="ticket_types_per_token">
-            <column name="token_type_id" value="5"/>
-            <column name="ticket_type_id" value="3"/>
-        </insert>
-        <insert tableName="ticket_types_per_token">
-            <column name="token_type_id" value="5"/>
-            <column name="ticket_type_id" value="4"/>
-        </insert>
-    </changeSet>
-
 </databaseChangeLog>

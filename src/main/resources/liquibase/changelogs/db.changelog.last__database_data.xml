@@ -1,0 +1,229 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="1" author="algis" context="main">
+        <insert tableName="transport_types">
+            <column name="name" value="Bus"/>
+            <column name="code" value ="A"/>
+        </insert>
+
+        <insert tableName="transport_types">
+            <column name="name" value="Trolleybus"/>
+            <column name="code" value ="Tb"/>
+        </insert>
+
+        <insert tableName="transport_types">
+            <column name="name" value="Tramway"/>
+            <column name="code" value ="Tw"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="2" author="algis" context="main">
+        <insert tableName="routes">
+            <column name="name" value="Oceania - Eurasia"/>
+            <column name="code" value ="A1"/>
+            <column name="transport_type_id" value ="1"/>
+        </insert>
+        <insert tableName="routes">
+            <column name="name" value="Oceania - Eastasia"/>
+            <column name="code" value ="A2"/>
+            <column name="transport_type_id" value ="1"/>
+        </insert>
+
+        <insert tableName="routes">
+            <column name="name" value="War - Peace"/>
+            <column name="code" value ="Tb1"/>
+            <column name="transport_type_id" value ="2"/>
+        </insert>
+        <insert tableName="routes">
+            <column name="name" value="Freedom - Slavery"/>
+            <column name="code" value ="Tb2"/>
+            <column name="transport_type_id" value ="2"/>
+        </insert>
+        <insert tableName="routes">
+            <column name="name" value="Ignorance - Peace"/>
+            <column name="code" value ="Tb3"/>
+            <column name="transport_type_id" value ="2"/>
+        </insert>
+
+        <insert tableName="routes">
+            <column name="name" value="Bellyfeel - Duckspeak"/>
+            <column name="code" value ="Tw1"/>
+            <column name="transport_type_id" value ="3"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="3" author="algis" context="main">
+
+        <insert tableName="vehicles">
+            <column name="car_code" value="Abus-0001"/>
+            <column name="route_id" value ="1"/>
+        </insert>
+        <insert tableName="vehicles">
+            <column name="car_code" value="Abus-0002"/>
+            <column name="route_id" value ="1"/>
+        </insert>
+        <insert tableName="vehicles">
+            <column name="car_code" value="Bbus-B0001"/>
+            <column name="route_id" value ="2"/>
+        </insert>
+
+        <insert tableName="vehicles">
+            <column name="car_code" value="Tram-T0001"/>
+            <column name="route_id" value ="6"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="4" author="alex" >
+        <insert tableName="terminal_types">
+            <column name="name">Trip Registrator</column>
+        </insert>
+
+        <insert tableName="terminal_types">
+            <column name="name">Trip Control Checkout</column>
+        </insert>
+
+        <insert tableName="terminal_types">
+            <column name="name">Driver's toolbox</column>
+        </insert>
+
+        <insert tableName="terminal_types">
+            <column name="name">Outside Terminal</column>
+        </insert>
+
+        <insert tableName="terminal_types">
+            <column name="name">Office Terminal</column>
+        </insert>
+    </changeSet>
+
+    <changeSet id="5" author="alex">
+        <insert tableName="terminals">
+            <column name="vehicle_id">1</column>
+            <column name="terminal_type_id">1</column>
+        </insert>
+        <insert tableName="terminals">
+            <column name="vehicle_id">1</column>
+            <column name="terminal_type_id">3</column>
+        </insert>
+
+        <insert tableName="terminals">
+            <column name="vehicle_id">2</column>
+            <column name="terminal_type_id">1</column>
+        </insert>
+        <insert tableName="terminals">
+            <column name="vehicle_id">2</column>
+            <column name="terminal_type_id">3</column>
+        </insert>
+    </changeSet>
+
+    <changeSet id="6" author="alex">
+        <insert tableName="tokens">
+            <column name="token_type_id">2</column>
+        </insert>
+    </changeSet>
+
+    <changeSet id="7" author="algis" context="main">
+        <insert tableName="token_types">
+            <column name="name" value="paper"/>
+        </insert>
+        <insert tableName="token_types">
+            <column name="name" value="smart card"/>
+        </insert>
+        <insert tableName="token_types">
+            <column name="name" value="anonymous"/>
+        </insert>
+        <insert tableName="token_types">
+            <column name="name" value="personified"/>
+        </insert>
+        <insert tableName="token_types">
+            <column name="name" value="bankcard"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="8" author="algis" context="main">
+        <insert tableName="ticket_types">
+            <column name="name" value="one-time ride"/>
+        </insert>
+        <insert tableName="ticket_types">
+            <column name="name" value="prepaid card"/>
+        </insert>
+        <insert tableName="ticket_types">
+            <column name="name" value="season ticket"/>
+        </insert>
+        <insert tableName="ticket_types">
+            <column name="name" value="postpaid ride"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="9" author="algis" context="main">
+        <!-- paper ticket can contain one-times -->
+        <insert tableName="ticket_types_per_token">
+            <column name="token_type_id" value="1"/>
+            <column name="ticket_type_id" value="1"/>
+        </insert>
+
+        <!-- smart cards can contain prepaid rides -->
+        <insert tableName="ticket_types_per_token">
+            <column name="token_type_id" value="2"/>
+            <column name="ticket_type_id" value="2"/>
+        </insert>
+
+        <!-- anonymous cards can contain prepaid rides and/or seasoned tickets -->
+        <insert tableName="ticket_types_per_token">
+            <column name="token_type_id" value="3"/>
+            <column name="ticket_type_id" value="2"/>
+        </insert>
+        <insert tableName="ticket_types_per_token">
+            <column name="token_type_id" value="3"/>
+            <column name="ticket_type_id" value="3"/>
+        </insert>
+
+        <!-- personified cards can contain prepaid rides and/or seasoned tickets -->
+        <insert tableName="ticket_types_per_token">
+            <column name="token_type_id" value="4"/>
+            <column name="ticket_type_id" value="2"/>
+        </insert>
+        <insert tableName="ticket_types_per_token">
+            <column name="token_type_id" value="4"/>
+            <column name="ticket_type_id" value="3"/>
+        </insert>
+
+        <!-- tokens integrated with bank card can contain seasoned tickets and postpaid rides -->
+        <insert tableName="ticket_types_per_token">
+            <column name="token_type_id" value="5"/>
+            <column name="ticket_type_id" value="3"/>
+        </insert>
+        <insert tableName="ticket_types_per_token">
+            <column name="token_type_id" value="5"/>
+            <column name="ticket_type_id" value="4"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="10" author="alex">
+        <insert tableName="tickets">
+            <column name="token_id">1</column>
+            <column name="issue_terminal_id">1</column>
+        </insert>
+    </changeSet>
+
+    <changeSet id="11" author="algis">
+        <insert tableName="trips">
+            <column name="vehicle_id" value="1"/>
+            <column name="is_ongoing" valueBoolean="false"/>
+        </insert>
+        <insert tableName="trips">
+            <column name="vehicle_id" value="1"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="12" author="alex">
+        <insert tableName="prepaid_rides">
+            <column name="ticket_id">1</column>
+            <column name="balance">78</column>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

@@ -22,21 +22,4 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="2" author="algis" context="main">
-        <insert tableName="transport_types">
-            <column name="name" value="Bus"/>
-            <column name="code" value ="A"/>
-        </insert>
-
-        <insert tableName="transport_types">
-            <column name="name" value="Trolleybus"/>
-            <column name="code" value ="Tb"/>
-        </insert>
-
-        <insert tableName="transport_types">
-            <column name="name" value="Tramway"/>
-            <column name="code" value ="Tw"/>
-        </insert>
-    </changeSet>
-
 </databaseChangeLog>
