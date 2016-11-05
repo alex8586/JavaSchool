@@ -5,6 +5,7 @@ import lv.javaguru.java3.core.domain.tickets.Token;
 import lv.javaguru.java3.core.domain.Trip;
 import lv.javaguru.java3.core.domain.tickets.Ticket;
 import org.hibernate.SessionFactory;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;

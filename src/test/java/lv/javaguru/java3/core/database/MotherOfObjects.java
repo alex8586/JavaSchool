@@ -47,7 +47,6 @@ public class MotherOfObjects {
     TicketDAO ticketDAO;
 
 
-
     public void flush(){
         sessionFactory.getCurrentSession().flush();
     }

@@ -41,13 +41,8 @@ public class TripControlHandler implements DomainCommandHandler<TripControlComma
 
         //controllers terminal is not connected to specific vehicle
         Vehicle vehicle = vehicleDAO.getByCode(command.getVehicleCode());
-        System.out.println("vehicle " + vehicle);
         Trip trip = vehicle.getCurrentTrip();
-        System.out.println("trip " + trip);
-
         Token token = tokenDAO.getById(command.getTokenId());
-        System.out.println("token " + token);
-
         Ride ride = existingRideExtractor.extract(trip,token);
         if(ride!= null) {
             RideDTO rideDTO = rideConverter.convert(ride);

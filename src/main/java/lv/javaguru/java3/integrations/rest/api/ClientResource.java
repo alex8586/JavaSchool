@@ -1,7 +1,5 @@
 package lv.javaguru.java3.integrations.rest.api;
-
 import lv.javaguru.java3.integrations.rest.dto.ClientDTO;
-
 import javax.ws.rs.*;
 
 import java.util.List;

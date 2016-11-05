@@ -43,10 +43,6 @@
                                  referencedTableName="terminals"/>
     </changeSet>
 
-    <changeSet id="4" author="algis">
-        <createSequence sequenceName="tickets_seq" />
-    </changeSet>
-
     <changeSet id="5" author="alex">
         <insert tableName="tickets">
             <column name="token_id">1</column>
@@ -58,5 +54,9 @@
         </insert>
     </changeSet>
 
+
+    <changeSet id="6" author="algis" context="main">
+        <createSequence sequenceName="tickets_seq" startValue="100"/>
+    </changeSet>
 
 </databaseChangeLog>
