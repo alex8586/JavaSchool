@@ -1,7 +1,7 @@
 package lv.javaguru.java3.restapi.impl;
 
-import lv.javaguru.java3.api.ClientBalanceResource;
-import lv.javaguru.java3.api.RESTResource;
+import lv.javaguru.java3.database.api.ClientBalanceResource;
+import lv.javaguru.java3.database.api.RESTResource;
 import lv.javaguru.java3.commands.tickets.balance.ClientBalanceCommand;
 import lv.javaguru.java3.commands.tickets.balance.ClientBalanceResult;
 import lv.javaguru.java3.commands.CommandExecutor;

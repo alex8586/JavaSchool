@@ -1,7 +1,7 @@
 package lv.javaguru.java3.restapi.impl;
 
-import lv.javaguru.java3.api.RESTResource;
-import lv.javaguru.java3.api.TripControlResource;
+import lv.javaguru.java3.database.api.RESTResource;
+import lv.javaguru.java3.database.api.TripControlResource;
 import lv.javaguru.java3.commands.trips.tripControl.TripControlCommand;
 import lv.javaguru.java3.commands.trips.tripControl.TripControlResult;
 import lv.javaguru.java3.commands.CommandExecutor;

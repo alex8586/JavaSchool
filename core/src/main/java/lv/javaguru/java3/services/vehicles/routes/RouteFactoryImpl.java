@@ -1,7 +1,7 @@
 package lv.javaguru.java3.services.vehicles.routes;
 
-import lv.javaguru.java3.api.vehicles.RouteDAO;
-import lv.javaguru.java3.api.vehicles.TransportTypeDAO;
+import lv.javaguru.java3.database.api.vehicles.RouteDAO;
+import lv.javaguru.java3.database.api.vehicles.TransportTypeDAO;
 import lv.javaguru.java3.domain.vehicles.Route;
 import lv.javaguru.java3.domain.vehicles.RouteBuilder;
 import lv.javaguru.java3.domain.vehicles.TransportType;

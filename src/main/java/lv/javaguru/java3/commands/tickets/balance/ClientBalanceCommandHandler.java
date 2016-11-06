@@ -1,7 +1,7 @@
 package lv.javaguru.java3.commands.tickets.balance;
 
 import lv.javaguru.java3.commands.DomainCommandHandler;
-import lv.javaguru.java3.api.tickets.TicketDAO;
+import lv.javaguru.java3.database.api.tickets.TicketDAO;
 import lv.javaguru.java3.domain.tickets.PrepaidRideTicket;
 import lv.javaguru.java3.dto.PrepaidRideTicketDTO;
 import org.springframework.beans.factory.annotation.Autowired;

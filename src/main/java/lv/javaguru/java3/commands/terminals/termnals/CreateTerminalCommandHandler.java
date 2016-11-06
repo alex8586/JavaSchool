@@ -1,8 +1,8 @@
 package lv.javaguru.java3.commands.terminals.termnals;
 
 import lv.javaguru.java3.commands.DomainCommandHandler;
-import lv.javaguru.java3.api.termnals.TerminalTypeDAO;
-import lv.javaguru.java3.api.vehicles.VehicleDAO;
+import lv.javaguru.java3.database.api.termnals.TerminalTypeDAO;
+import lv.javaguru.java3.database.api.vehicles.VehicleDAO;
 import lv.javaguru.java3.domain.terminals.Terminal;
 import lv.javaguru.java3.domain.terminals.TerminalType;
 import lv.javaguru.java3.domain.vehicles.Vehicle;

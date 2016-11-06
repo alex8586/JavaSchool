@@ -1,6 +1,5 @@
 group 'java3'
 version '1.0-SNAPSHOT'
-
 apply plugin: 'java'
 apply plugin: 'idea'
 
@@ -12,10 +11,10 @@ repositories {
 }
 
 ext {
-    commonsLangVersion = '2.6'
     hsqldbVersion = '2.3.1'
-    mysqlConnectorJavaVersion = '5.1.28'
     liquidbaseCoreVersion = '3.2.2'
+
+    commonsLangVersion = '2.6'
     guavaVersion = '18.0'
     springBootStarterDataJpaVersion = '1.2.7.RELEASE'
 
@@ -25,15 +24,16 @@ ext {
 }
 
 dependencies {
-    compile "commons-lang:commons-lang:$commonsLangVersion"
+
     compile "org.hsqldb:hsqldb:$hsqldbVersion"
-    compile "mysql:mysql-connector-java:$mysqlConnectorJavaVersion"
     compile "org.liquibase:liquibase-core:$liquidbaseCoreVersion"
+
+    compile "commons-lang:commons-lang:$commonsLangVersion"
     compile "com.google.guava:guava:$guavaVersion"
     compile "org.springframework.boot:spring-boot-starter-data-jpa:$springBootStarterDataJpaVersion"
 
     testCompile "junit:junit:$junitVersion"
-    testCompile "org.mockito:mockito-all:$mockitoVersion"
+    //testCompile "org.mockito:mockito-all:$mockitoVersion"
     testCompile "org.springframework.boot:spring-boot-starter-test:$springBootStarterTestVersion"
 
 }

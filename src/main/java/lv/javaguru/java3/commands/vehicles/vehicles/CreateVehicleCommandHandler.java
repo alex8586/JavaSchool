@@ -2,7 +2,7 @@ package lv.javaguru.java3.commands.vehicles.vehicles;
 
 
 import lv.javaguru.java3.commands.DomainCommandHandler;
-import lv.javaguru.java3.api.vehicles.RouteDAO;
+import lv.javaguru.java3.database.api.vehicles.RouteDAO;
 import lv.javaguru.java3.domain.vehicles.Route;
 import lv.javaguru.java3.domain.vehicles.Vehicle;
 import lv.javaguru.java3.services.vehicles.vehicles.VehicleFactory;

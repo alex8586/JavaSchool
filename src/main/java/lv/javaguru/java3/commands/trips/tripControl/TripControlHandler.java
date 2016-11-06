@@ -2,9 +2,9 @@ package lv.javaguru.java3.commands.trips.tripControl;
 
 import lv.javaguru.java3.commands.trips.rides.RideConverter;
 import lv.javaguru.java3.commands.DomainCommandHandler;
-import lv.javaguru.java3.api.termnals.TerminalDAO;
-import lv.javaguru.java3.api.tickets.TokenDAO;
-import lv.javaguru.java3.api.vehicles.VehicleDAO;
+import lv.javaguru.java3.database.api.termnals.TerminalDAO;
+import lv.javaguru.java3.database.api.tickets.TokenDAO;
+import lv.javaguru.java3.database.api.vehicles.VehicleDAO;
 import lv.javaguru.java3.domain.terminals.Terminal;
 import lv.javaguru.java3.domain.tickets.Token;
 import lv.javaguru.java3.domain.trips.Ride;

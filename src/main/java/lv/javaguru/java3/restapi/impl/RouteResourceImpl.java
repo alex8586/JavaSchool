@@ -1,8 +1,8 @@
 package lv.javaguru.java3.restapi.impl;
 
 
-import lv.javaguru.java3.api.RESTResource;
-import lv.javaguru.java3.api.RouteResource;
+import lv.javaguru.java3.database.api.RESTResource;
+import lv.javaguru.java3.database.api.RouteResource;
 import lv.javaguru.java3.commands.vehicles.routes.GetAllRoutesCommand;
 import lv.javaguru.java3.commands.vehicles.routes.GetAllRoutesResult;
 import lv.javaguru.java3.commands.vehicles.routes.GetRouteCommand;

@@ -1,7 +1,7 @@
 package lv.javaguru.java3.restapi.impl;
 
-import lv.javaguru.java3.api.RESTResource;
-import lv.javaguru.java3.api.VehicleResourse;
+import lv.javaguru.java3.database.api.RESTResource;
+import lv.javaguru.java3.database.api.VehicleResourse;
 import lv.javaguru.java3.commands.vehicles.vehicles.*;
 import lv.javaguru.java3.commands.CommandExecutor;
 import lv.javaguru.java3.dto.VehicleDTO;

@@ -1,6 +1,6 @@
 package lv.javaguru.java3.services.trips.rides;
 
-import lv.javaguru.java3.api.trips.RideDAO;
+import lv.javaguru.java3.database.api.trips.RideDAO;
 import lv.javaguru.java3.domain.tickets.Token;
 import lv.javaguru.java3.domain.trips.Ride;
 import lv.javaguru.java3.domain.trips.Trip;

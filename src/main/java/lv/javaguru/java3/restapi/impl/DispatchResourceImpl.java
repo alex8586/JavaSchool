@@ -1,6 +1,6 @@
 package lv.javaguru.java3.restapi.impl;
 
-import lv.javaguru.java3.api.DispatchResource;
+import lv.javaguru.java3.database.api.DispatchResource;
 import lv.javaguru.java3.commands.vehicles.dispatch.DispatchCommand;
 import lv.javaguru.java3.commands.vehicles.dispatch.DispatchResult;
 import lv.javaguru.java3.commands.CommandExecutor;

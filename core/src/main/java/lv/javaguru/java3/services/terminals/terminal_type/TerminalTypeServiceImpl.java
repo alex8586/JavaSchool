@@ -1,6 +1,6 @@
 package lv.javaguru.java3.services.terminals.terminal_type;
 
-import lv.javaguru.java3.api.termnals.TerminalTypeDAO;
+import lv.javaguru.java3.database.api.termnals.TerminalTypeDAO;
 import lv.javaguru.java3.domain.terminals.TerminalType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

@@ -1,7 +1,7 @@
 package lv.javaguru.java3.restapi.impl;
 
-import lv.javaguru.java3.api.RESTResource;
-import lv.javaguru.java3.api.TripRegistrationResource;
+import lv.javaguru.java3.database.api.RESTResource;
+import lv.javaguru.java3.database.api.TripRegistrationResource;
 import lv.javaguru.java3.commands.trips.tripRegistration.TripRegistrationCommand;
 import lv.javaguru.java3.commands.trips.tripRegistration.TripRegistrationResult;
 import lv.javaguru.java3.commands.CommandExecutor;

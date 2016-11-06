@@ -46,7 +46,7 @@ dependencies {
     compile "org.liquibase:liquibase-core:$liquidbaseCoreVersion"
     compile "com.google.guava:guava:$guavaVersion"
     compile "javax.ws.rs:javax.ws.rs-api:$javaxWsRsVersion"
-    compile "org.springframework.boot:spring-boot-starter-data-jpa:$springBootStarterDataJpaVersion"
+    //compile "org.springframework.boot:spring-boot-starter-data-jpa:$springBootStarterDataJpaVersion"
     compile "org.springframework.boot:spring-boot-starter-jersey:$springBootStarterJersey"
     compile "com.fasterxml.jackson.core:jackson-core:$jaksonCoreVersion"
     compile "com.fasterxml.jackson.core:jackson-databind:$jaksonDatabindVersion"

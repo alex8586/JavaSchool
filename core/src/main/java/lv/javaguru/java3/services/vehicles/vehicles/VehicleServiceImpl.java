@@ -1,7 +1,7 @@
 package lv.javaguru.java3.services.vehicles.vehicles;
 
-import lv.javaguru.java3.api.trips.TripDAO;
-import lv.javaguru.java3.api.vehicles.VehicleDAO;
+import lv.javaguru.java3.database.api.trips.TripDAO;
+import lv.javaguru.java3.database.api.vehicles.VehicleDAO;
 import lv.javaguru.java3.domain.trips.Trip;
 import lv.javaguru.java3.domain.vehicles.Route;
 import lv.javaguru.java3.domain.vehicles.Vehicle;
