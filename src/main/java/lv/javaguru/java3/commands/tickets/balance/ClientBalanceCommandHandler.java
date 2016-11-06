@@ -23,9 +23,4 @@ public class ClientBalanceCommandHandler
         PrepaidRideTicketDTO prepaidRideTicketDTO = clientBalanceConverter.convert(prepaidRideTicket);
         return new ClientBalanceResult(prepaidRideTicketDTO);
     }
-
-    @Override
-    public Class getCommandType() {
-        return ClientBalanceCommand.class;
-    }
 }

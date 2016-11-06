@@ -22,9 +22,4 @@ class GetAllRoutesCommandHandler implements DomainCommandHandler<GetAllRoutesCom
         return new GetAllRoutesResult(routeDTOs);
     }
 
-    @Override
-    public Class getCommandType() {
-        return GetAllRoutesCommand.class;
-    }
-
 }

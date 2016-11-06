@@ -37,8 +37,4 @@ public class CreateTerminalCommandHandler
         return new CreateTerminalResult(terminalDTO);
     }
 
-    @Override
-    public Class getCommandType() {
-        return CreateTerminalCommand.class;
-    }
 }

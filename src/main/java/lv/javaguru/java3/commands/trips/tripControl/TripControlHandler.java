@@ -50,9 +50,4 @@ public class TripControlHandler implements DomainCommandHandler<TripControlComma
             return new TripControlResult(null);
         }
     }
-
-    @Override
-    public Class getCommandType() {
-        return TripControlCommand.class;
-    }
 }

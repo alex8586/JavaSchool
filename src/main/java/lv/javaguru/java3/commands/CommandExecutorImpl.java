@@ -21,7 +21,7 @@ class CommandExecutorImpl implements CommandExecutor {
         commandServiceMap = new HashMap<>();
         if(services != null && !services.isEmpty()) {
             for (DomainCommandHandler service : services) {
-                Class domainCommandClass = service.getCommandType();
+                Class domainCommandClass = service.getClass();
                 commandServiceMap.put(domainCommandClass, service);
                 System.out.println("Registring domain command : " + service);
             }

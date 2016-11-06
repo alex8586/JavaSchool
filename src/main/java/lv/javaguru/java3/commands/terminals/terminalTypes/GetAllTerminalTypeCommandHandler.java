@@ -25,8 +25,4 @@ public class GetAllTerminalTypeCommandHandler
         return new GetAllTerminalTypeResult(terminalTypeDTOs);
     }
 
-    @Override
-    public Class getCommandType() {
-        return GetAllTerminalTypeCommand.class;
-    }
 }

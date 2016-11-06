@@ -20,8 +20,4 @@ public class GetRouteCommandHandler implements DomainCommandHandler<GetRouteComm
         return new GetRouteResult(routeDTO);
     }
 
-    @Override
-    public Class getCommandType() {
-        return GetRouteCommand.class;
-    }
 }

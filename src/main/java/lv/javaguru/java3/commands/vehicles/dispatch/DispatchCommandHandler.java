@@ -22,7 +22,6 @@ public class DispatchCommandHandler implements DomainCommandHandler<DispatchComm
     @Autowired
     DispatchConverter dispatchConverter;
 
-
     @Override
     public DispatchResult execute(DispatchCommand command) {
         Terminal terminal = terminalService.get(command.getTerminalId());
@@ -35,10 +34,5 @@ public class DispatchCommandHandler implements DomainCommandHandler<DispatchComm
         
         DispatchDTO dispatchDTO = dispatchConverter.convert(oldTrip,newTrip);
         return new DispatchResult(dispatchDTO);
-    }
-
-    @Override
-    public Class getCommandType() {
-        return DispatchCommand.class;
     }
 }

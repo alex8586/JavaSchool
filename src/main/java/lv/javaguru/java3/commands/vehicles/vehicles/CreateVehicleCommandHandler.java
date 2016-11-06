@@ -28,9 +28,4 @@ public class CreateVehicleCommandHandler
         VehicleDTO vehicleDTO = vehicleConverter.convert(vehicle);
         return new CreateVehicleResult(vehicleDTO);
     }
-
-    @Override
-    public Class getCommandType() {
-        return CreateVehicleCommand.class;
-    }
 }

@@ -22,9 +22,4 @@ public class CreateTerminalTypeCommandHandler
         TerminalTypeDTO terminalTypeDTO = terminalTypeConverter.convert(terminalType);
         return new CreateTerminalTypeResult(terminalTypeDTO);
     }
-
-    @Override
-    public Class getCommandType() {
-        return CreateTerminalTypeCommand.class;
-    }
 }

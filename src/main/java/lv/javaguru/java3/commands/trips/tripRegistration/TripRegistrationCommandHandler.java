@@ -54,9 +54,4 @@ public class TripRegistrationCommandHandler
         RideDTO rideDTO = rideConverter.convert(ride);
         return new TripRegistrationResult(rideDTO);
     }
-
-    @Override
-    public Class getCommandType() {
-        return TripRegistrationCommand.class;
-    }
 }
