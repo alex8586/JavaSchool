@@ -1,6 +1,6 @@
 package lv.javaguru.java3.config;
 
-import lv.javaguru.java3.integrations.rest.impl.*;
+import lv.javaguru.java3.restapi.impl.*;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.context.annotation.Configuration;
 
@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Configuration;
 class JerseyConfig extends ResourceConfig {
 
     public JerseyConfig() {
-        register(ClientResourceImpl.class);
 
         register(RouteResourceImpl.class);
         register(TerminalResourceImpl.class);

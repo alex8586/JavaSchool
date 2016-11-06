@@ -39,6 +39,7 @@ ext {
 
 dependencies {
     compile project(":api")
+    compile project(":core")
     compile "commons-lang:commons-lang:$commonsLangVersion"
     compile "org.hsqldb:hsqldb:$hsqldbVersion"
     compile "mysql:mysql-connector-java:$mysqlConnectorJavaVersion"

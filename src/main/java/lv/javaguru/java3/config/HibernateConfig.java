@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import javax.persistence.EntityManagerFactory;
 
 @Configuration
-@EntityScan(basePackages = "lv.javaguru.java3.core.domain")
+@EntityScan(basePackages = "lv.javaguru.java3.domain")
 class HibernateConfig {
 
     @Autowired
