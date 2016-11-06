@@ -12,7 +12,9 @@ repositories {
 
 ext {
     hsqldbVersion = '2.3.1'
+    mysqlConnectorJavaVersion = '5.1.28'
     liquidbaseCoreVersion = '3.2.2'
+
 
     commonsLangVersion = '2.6'
     guavaVersion = '18.0'
@@ -26,6 +28,7 @@ ext {
 dependencies {
 
     compile "org.hsqldb:hsqldb:$hsqldbVersion"
+    compile "mysql:mysql-connector-java:$mysqlConnectorJavaVersion"
     compile "org.liquibase:liquibase-core:$liquidbaseCoreVersion"
 
     compile "commons-lang:commons-lang:$commonsLangVersion"
