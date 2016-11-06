@@ -1,8 +1,6 @@
 package lv.javaguru.java3.core.commands.trips.tripRegistration;
 
 import lv.javaguru.java3.core.commands.trips.RideConverter;
-import lv.javaguru.java3.core.commands.trips.TokenConverter;
-import lv.javaguru.java3.core.database.RideDAO;
 import lv.javaguru.java3.core.database.TerminalDAO;
 import lv.javaguru.java3.core.database.TokenDAO;
 import lv.javaguru.java3.core.domain.*;
@@ -10,8 +8,8 @@ import lv.javaguru.java3.core.domain.tickets.Token;
 import lv.javaguru.java3.core.services.DomainCommandHandler;
 import lv.javaguru.java3.core.services.ride.RideFactory;
 import lv.javaguru.java3.core.services.trip.ExistingRideExtractorImpl;
-import lv.javaguru.java3.integrations.rest.dto.RideDTO;
-import lv.javaguru.java3.integrations.rest.dto.TokenDTO;
+
+import lv.javaguru.java3.dto.RideDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

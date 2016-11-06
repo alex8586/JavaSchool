@@ -1,7 +1,8 @@
 package lv.javaguru.java3.core.commands.terminals;
 
 import lv.javaguru.java3.core.commands.DomainCommandResult;
-import lv.javaguru.java3.integrations.rest.dto.TerminalDTO;
+import lv.javaguru.java3.dto.TerminalDTO;
+
 
 public class CreateTerminalResult implements DomainCommandResult{
 

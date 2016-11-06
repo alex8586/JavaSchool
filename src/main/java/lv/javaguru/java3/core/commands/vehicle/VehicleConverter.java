@@ -2,8 +2,8 @@ package lv.javaguru.java3.core.commands.vehicle;
 
 import lv.javaguru.java3.core.commands.routes.RouteConverter;
 import lv.javaguru.java3.core.domain.Vehicle;
-import lv.javaguru.java3.integrations.rest.dto.VehicleDTO;
-import lv.javaguru.java3.integrations.rest.dto.VehicleDTOBuilder;
+import lv.javaguru.java3.dto.VehicleDTO;
+import lv.javaguru.java3.dto.builders.VehicleDTOBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

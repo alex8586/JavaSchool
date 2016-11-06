@@ -1,13 +1,13 @@
 package lv.javaguru.java3.integrations.rest.impl;
 
+import lv.javaguru.java3.api.RESTResource;
+import lv.javaguru.java3.api.TripControlResource;
 import lv.javaguru.java3.core.commands.trips.tripControl.TripControlCommand;
 import lv.javaguru.java3.core.commands.trips.tripControl.TripControlResult;
 import lv.javaguru.java3.core.services.CommandExecutor;
-import lv.javaguru.java3.integrations.rest.api.RESTResource;
-import lv.javaguru.java3.integrations.rest.api.TripControlResource;
-import lv.javaguru.java3.integrations.rest.dto.DispatchDTO;
-import lv.javaguru.java3.integrations.rest.dto.RideDTO;
-import lv.javaguru.java3.integrations.rest.dto.TripControlRequestDTO;
+
+import lv.javaguru.java3.dto.RideDTO;
+import lv.javaguru.java3.dto.TripControlRequestDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

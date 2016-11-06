@@ -3,7 +3,7 @@ package lv.javaguru.java3.core.commands.tickets;
 import lv.javaguru.java3.core.database.TicketDAO;
 import lv.javaguru.java3.core.domain.tickets.PrepaidRideTicket;
 import lv.javaguru.java3.core.services.DomainCommandHandler;
-import lv.javaguru.java3.integrations.rest.dto.PrepaidRideTicketDTO;
+import lv.javaguru.java3.dto.PrepaidRideTicketDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

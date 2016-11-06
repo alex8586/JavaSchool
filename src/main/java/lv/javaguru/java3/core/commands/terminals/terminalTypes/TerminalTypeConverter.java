@@ -1,13 +1,11 @@
 package lv.javaguru.java3.core.commands.terminals.terminalTypes;
-
 import lv.javaguru.java3.core.domain.TerminalType;
-import lv.javaguru.java3.integrations.rest.dto.TerminalTypeDTO;
+import lv.javaguru.java3.dto.TerminalTypeDTO;
 import org.springframework.stereotype.Component;
-
 import java.util.List;
 import java.util.stream.Collectors;
+import static lv.javaguru.java3.dto.builders.TerminalTypeDTOBuilder.createTerminalTypeDTO;
 
-import static lv.javaguru.java3.integrations.rest.dto.TerminalTypeDTOBuilder.createTerminalTypeDTO;
 
 @Component
 public class TerminalTypeConverter {

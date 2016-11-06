@@ -1,8 +1,8 @@
 package lv.javaguru.java3.core.commands.routes.transportTypes;
 
 import lv.javaguru.java3.core.domain.TransportType;
-import lv.javaguru.java3.integrations.rest.dto.TransportTypeDTO;
-import lv.javaguru.java3.integrations.rest.dto.TransportTypeDTOBuilder;
+import lv.javaguru.java3.dto.TransportTypeDTO;
+import lv.javaguru.java3.dto.builders.TransportTypeDTOBuilder;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

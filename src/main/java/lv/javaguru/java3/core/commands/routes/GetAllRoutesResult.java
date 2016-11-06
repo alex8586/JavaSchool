@@ -1,8 +1,8 @@
 package lv.javaguru.java3.core.commands.routes;
 
 import lv.javaguru.java3.core.commands.DomainCommandResult;
-import lv.javaguru.java3.integrations.rest.dto.ClientDTO;
-import lv.javaguru.java3.integrations.rest.dto.RouteDTO;
+import lv.javaguru.java3.dto.RouteDTO;
+
 
 import java.util.List;
 

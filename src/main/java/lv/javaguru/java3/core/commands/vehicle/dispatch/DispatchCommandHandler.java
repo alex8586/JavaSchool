@@ -1,21 +1,12 @@
 package lv.javaguru.java3.core.commands.vehicle.dispatch;
 
-import lv.javaguru.java3.core.commands.trips.TripConverter;
-import lv.javaguru.java3.core.commands.vehicle.CreateVehicleCommand;
-import lv.javaguru.java3.core.commands.vehicle.CreateVehicleResult;
-import lv.javaguru.java3.core.database.TripDAO;
-import lv.javaguru.java3.core.domain.Client;
 import lv.javaguru.java3.core.domain.Terminal;
 import lv.javaguru.java3.core.domain.Trip;
 import lv.javaguru.java3.core.domain.Vehicle;
 import lv.javaguru.java3.core.services.DomainCommandHandler;
 import lv.javaguru.java3.core.services.terminal.TerminalService;
-import lv.javaguru.java3.core.services.terminal.TerminalServiceImpl;
 import lv.javaguru.java3.core.services.vehicle.VehicleService;
-import lv.javaguru.java3.integrations.rest.dto.DispatchDTO;
-import lv.javaguru.java3.integrations.rest.dto.TripDTO;
-import lv.javaguru.java3.integrations.rest.dto.TripDTOBuilder;
-import org.hibernate.SessionFactory;
+import lv.javaguru.java3.dto.DispatchDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

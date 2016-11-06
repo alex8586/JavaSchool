@@ -1,11 +1,12 @@
 package lv.javaguru.java3.integrations.rest.impl;
 
+import lv.javaguru.java3.api.ClientBalanceResource;
+import lv.javaguru.java3.api.RESTResource;
 import lv.javaguru.java3.core.commands.tickets.ClientBalanceCommand;
 import lv.javaguru.java3.core.commands.tickets.ClientBalanceResult;
 import lv.javaguru.java3.core.services.CommandExecutor;
-import lv.javaguru.java3.integrations.rest.api.ClientBalanceResource;
-import lv.javaguru.java3.integrations.rest.api.RESTResource;
-import lv.javaguru.java3.integrations.rest.dto.PrepaidRideTicketDTO;
+
+import lv.javaguru.java3.dto.PrepaidRideTicketDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

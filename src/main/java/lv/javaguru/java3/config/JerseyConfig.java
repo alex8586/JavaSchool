@@ -1,6 +1,5 @@
 package lv.javaguru.java3.config;
 
-import lv.javaguru.java3.integrations.rest.api.TripControlResource;
 import lv.javaguru.java3.integrations.rest.impl.*;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.context.annotation.Configuration;

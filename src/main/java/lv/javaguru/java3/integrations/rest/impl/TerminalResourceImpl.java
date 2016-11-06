@@ -1,10 +1,10 @@
 package lv.javaguru.java3.integrations.rest.impl;
 
+import lv.javaguru.java3.api.RESTResource;
+import lv.javaguru.java3.api.TerminalResource;
 import lv.javaguru.java3.core.commands.terminals.*;
 import lv.javaguru.java3.core.services.CommandExecutor;
-import lv.javaguru.java3.integrations.rest.api.RESTResource;
-import lv.javaguru.java3.integrations.rest.api.TerminalResource;
-import lv.javaguru.java3.integrations.rest.dto.TerminalDTO;
+import lv.javaguru.java3.dto.TerminalDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

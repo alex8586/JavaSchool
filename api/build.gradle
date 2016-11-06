@@ -1,0 +1,14 @@
+group 'java3'
+version '1.0-SNAPSHOT'
+apply plugin: 'java'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+ext {
+    javaxWsRsVersion = "2.0.1"
+}
+dependencies {
+    compile "javax.ws.rs:javax.ws.rs-api:$javaxWsRsVersion"
+}

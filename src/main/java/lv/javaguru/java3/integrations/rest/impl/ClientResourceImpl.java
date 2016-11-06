@@ -1,16 +1,15 @@
 package lv.javaguru.java3.integrations.rest.impl;
 
-import lv.javaguru.java3.core.commands.VoidResult;
+import lv.javaguru.java3.api.ClientResource;
+import lv.javaguru.java3.api.RESTResource;
+import lv.javaguru.java3.dto.ClientDTO;
 import lv.javaguru.java3.core.commands.clients.*;
-import lv.javaguru.java3.integrations.rest.dto.ClientDTO;
 import lv.javaguru.java3.core.services.CommandExecutor;
-import lv.javaguru.java3.integrations.rest.api.RESTResource;
-import lv.javaguru.java3.integrations.rest.api.ClientResource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.ws.rs.*;
-
 import java.util.List;
 
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
@@ -18,7 +17,6 @@ import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 @Component
 @Path(RESTResource.API_PATH)
 public class ClientResourceImpl implements ClientResource {
-
     private CommandExecutor commandExecutor;
 
     @Autowired

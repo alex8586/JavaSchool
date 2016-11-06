@@ -1,10 +1,9 @@
 package lv.javaguru.java3.core.commands.trips;
-
 import lv.javaguru.java3.core.domain.tickets.TokenType;
-import lv.javaguru.java3.integrations.rest.dto.TokenTypeDTO;
+import lv.javaguru.java3.dto.TokenTypeDTO;
 import org.springframework.stereotype.Component;
+import static lv.javaguru.java3.dto.builders.TokenTypeDTOBuilder.createTokenTypeDTO;
 
-import static lv.javaguru.java3.integrations.rest.dto.TokenTypeDTOBuilder.createTokenTypeDTO;
 
 @Component
 public class TokenTypeConverter {

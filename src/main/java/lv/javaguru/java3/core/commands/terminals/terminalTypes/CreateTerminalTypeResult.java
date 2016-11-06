@@ -1,7 +1,6 @@
 package lv.javaguru.java3.core.commands.terminals.terminalTypes;
-
 import lv.javaguru.java3.core.commands.DomainCommandResult;
-import lv.javaguru.java3.integrations.rest.dto.TerminalTypeDTO;
+import lv.javaguru.java3.dto.TerminalTypeDTO;
 
 public class CreateTerminalTypeResult implements DomainCommandResult{
 

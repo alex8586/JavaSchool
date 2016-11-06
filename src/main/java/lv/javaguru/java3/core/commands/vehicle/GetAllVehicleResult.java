@@ -1,7 +1,7 @@
 package lv.javaguru.java3.core.commands.vehicle;
 
 import lv.javaguru.java3.core.commands.DomainCommandResult;
-import lv.javaguru.java3.integrations.rest.dto.VehicleDTO;
+import lv.javaguru.java3.dto.VehicleDTO;
 
 import java.util.List;
 

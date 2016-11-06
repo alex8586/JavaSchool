@@ -1,13 +1,13 @@
 package lv.javaguru.java3.integrations.rest.clients;
 
 import feign.FeignException;
+import lv.javaguru.java3.dto.ClientDTO;
 import lv.javaguru.java3.integrations.rest.RESTResourceTest;
-import lv.javaguru.java3.integrations.rest.dto.ClientDTO;
 import org.apache.commons.lang.RandomStringUtils;
 import org.junit.Before;
 import org.junit.Test;
 
-import static lv.javaguru.java3.integrations.rest.dto.ClientDTOBuilder.createClientDTO;
+import static lv.javaguru.java3.dto.builders.ClientDTOBuilder.createClientDTO;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.Assert.assertThat;

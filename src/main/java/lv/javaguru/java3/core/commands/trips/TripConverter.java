@@ -1,8 +1,8 @@
 package lv.javaguru.java3.core.commands.trips;
 
 import lv.javaguru.java3.core.domain.Trip;
-import lv.javaguru.java3.integrations.rest.dto.TripDTO;
-import lv.javaguru.java3.integrations.rest.dto.TripDTOBuilder;
+import lv.javaguru.java3.dto.TripDTO;
+import lv.javaguru.java3.dto.builders.TripDTOBuilder;
 import org.springframework.stereotype.Component;
 
 @Component

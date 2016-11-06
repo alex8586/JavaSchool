@@ -1,12 +1,11 @@
 package lv.javaguru.java3.integrations.rest.impl;
 
+import lv.javaguru.java3.api.RESTResource;
+import lv.javaguru.java3.api.TripRegistrationResource;
 import lv.javaguru.java3.core.commands.trips.tripRegistration.TripRegistrationCommand;
 import lv.javaguru.java3.core.commands.trips.tripRegistration.TripRegistrationResult;
 import lv.javaguru.java3.core.services.CommandExecutor;
-import lv.javaguru.java3.integrations.rest.api.RESTResource;
-import lv.javaguru.java3.integrations.rest.api.TripRegistrationResource;
-import lv.javaguru.java3.integrations.rest.dto.RideDTO;
-import lv.javaguru.java3.integrations.rest.dto.TokenDTO;
+import lv.javaguru.java3.dto.RideDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -31,6 +30,5 @@ public class TripRegistrationResourceImpl implements TripRegistrationResource {
         TripRegistrationResult result = commandExecutor.execute(command);
         return result.getRideDTO();
     }
-
 
 }

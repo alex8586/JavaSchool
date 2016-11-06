@@ -3,8 +3,9 @@ package lv.javaguru.java3.core.commands.terminals;
 import lv.javaguru.java3.core.commands.terminals.terminalTypes.TerminalTypeConverter;
 import lv.javaguru.java3.core.commands.vehicle.VehicleConverter;
 import lv.javaguru.java3.core.domain.Terminal;
-import lv.javaguru.java3.integrations.rest.dto.TerminalDTO;
-import lv.javaguru.java3.integrations.rest.dto.TerminalDTOBuilder;
+
+import lv.javaguru.java3.dto.TerminalDTO;
+import lv.javaguru.java3.dto.builders.TerminalDTOBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

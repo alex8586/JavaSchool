@@ -1,17 +1,14 @@
 package lv.javaguru.java3.integrations.rest.impl;
 
-import lv.javaguru.java3.core.commands.clients.GetAllClientsCommand;
-import lv.javaguru.java3.core.commands.clients.GetAllClientsResult;
-import lv.javaguru.java3.core.commands.clients.GetClientCommand;
-import lv.javaguru.java3.core.commands.clients.GetClientResult;
+
+import lv.javaguru.java3.api.RESTResource;
+import lv.javaguru.java3.api.RouteResource;
 import lv.javaguru.java3.core.commands.routes.GetAllRoutesCommand;
 import lv.javaguru.java3.core.commands.routes.GetAllRoutesResult;
 import lv.javaguru.java3.core.commands.routes.GetRouteCommand;
 import lv.javaguru.java3.core.commands.routes.GetRouteResult;
 import lv.javaguru.java3.core.services.CommandExecutor;
-import lv.javaguru.java3.integrations.rest.api.RESTResource;
-import lv.javaguru.java3.integrations.rest.api.RouteResource;
-import lv.javaguru.java3.integrations.rest.dto.RouteDTO;
+import lv.javaguru.java3.dto.RouteDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

@@ -1,8 +1,7 @@
 package lv.javaguru.java3.core.commands.trips.tripControl;
 
 import lv.javaguru.java3.core.commands.DomainCommandResult;
-import lv.javaguru.java3.integrations.rest.dto.RideDTO;
-
+import lv.javaguru.java3.dto.RideDTO;
 
 public class TripControlResult implements DomainCommandResult {
     private RideDTO rideDTO;

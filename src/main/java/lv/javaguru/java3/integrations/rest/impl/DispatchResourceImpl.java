@@ -1,14 +1,11 @@
 package lv.javaguru.java3.integrations.rest.impl;
 
-import lv.javaguru.java3.core.commands.clients.CreateClientCommand;
-import lv.javaguru.java3.core.commands.clients.CreateClientResult;
+import lv.javaguru.java3.api.DispatchResource;
 import lv.javaguru.java3.core.commands.vehicle.dispatch.DispatchCommand;
 import lv.javaguru.java3.core.commands.vehicle.dispatch.DispatchResult;
 import lv.javaguru.java3.core.services.CommandExecutor;
-import lv.javaguru.java3.integrations.rest.api.DispatchResource;
-import lv.javaguru.java3.integrations.rest.dto.ClientDTO;
-import lv.javaguru.java3.integrations.rest.dto.DispatchDTO;
-import lv.javaguru.java3.integrations.rest.dto.DispatchMessageDTO;
+import lv.javaguru.java3.dto.DispatchDTO;
+import lv.javaguru.java3.dto.DispatchMessageDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.ws.rs.Consumes;
