@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="lv.javaguru.java3.databasetmp.TicketDAOImplTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-11-07T00:46:14" hostname="Speedy" time="0.044">
+  <properties/>
+  <testcase name="test" classname="lv.javaguru.java3.databasetmp.TicketDAOImplTest" time="0.044"/>
+  <system-out><![CDATA[2016-11-07 02:46:14.283  INFO 31659 --- [    Test worker] o.s.t.c.s.DefaultTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2016-11-07 02:46:14.283  INFO 31659 --- [    Test worker] o.s.t.c.s.DefaultTestContextBootstrapper : Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2016-11-07 02:46:14.283  INFO 31659 --- [    Test worker] o.s.t.c.s.DefaultTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@29290c30, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7a45ebd0, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6736eabf, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@483fd869]
+2016-11-07 02:46:14.290  INFO 31659 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@2ceb1e6d testClass = TicketDAOImplTest, testInstance = lv.javaguru.java3.databasetmp.TicketDAOImplTest@1aa16709, testMethod = test@TicketDAOImplTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@380d90a testClass = TicketDAOImplTest, locations = '{}', classes = '{class lv.javaguru.java3.config.CoreConfig}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.boot.test.SpringApplicationContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@2464e9]; rollback [true]
+Hibernate: select tokentype0_.id as id1_7_0_, tokentype0_.name as name2_7_0_ from token_types tokentype0_ where tokentype0_.id=?
+Hibernate: call next value for tokens_seq
+Hibernate: select transportt0_.id as id1_9_0_, transportt0_.code as code2_9_0_, transportt0_.name as name3_9_0_ from transport_types transportt0_ where transportt0_.id=?
+Hibernate: call next value for routes_seq
+Hibernate: call next value for vehicle_seq
+Hibernate: call next value for trips_seq
+Hibernate: select terminalty0_.id as id1_4_0_, terminalty0_.name as name2_4_0_ from terminal_types terminalty0_ where terminalty0_.id=?
+Hibernate: call next value for routes_seq
+Hibernate: call next value for vehicle_seq
+Hibernate: call next value for terminals_sec
+Hibernate: call next value for tickets_seq
+Hibernate: call next value for routes_seq
+Hibernate: call next value for vehicle_seq
+Hibernate: call next value for terminals_sec
+Hibernate: call next value for tickets_seq
+Hibernate: insert into tokens (token_type_id, trip_id, id) values (?, ?, ?)
+Hibernate: insert into routes (code, name, transport_type_id, id) values (?, ?, ?, ?)
+Hibernate: insert into vehicles (car_code, route_id, id) values (?, ?, ?)
+Hibernate: insert into trips (is_ongoing, vehicle_id, id) values (?, ?, ?)
+Hibernate: insert into routes (code, name, transport_type_id, id) values (?, ?, ?, ?)
+Hibernate: insert into vehicles (car_code, route_id, id) values (?, ?, ?)
+Hibernate: insert into terminals (terminal_type_id, vehicle_id, id) values (?, ?, ?)
+Hibernate: insert into tickets (issue_terminal_id, token_id, id) values (?, ?, ?)
+Hibernate: insert into one_timers (trip_id, ticket_id) values (?, ?)
+Hibernate: insert into routes (code, name, transport_type_id, id) values (?, ?, ?, ?)
+Hibernate: insert into vehicles (car_code, route_id, id) values (?, ?, ?)
+Hibernate: insert into terminals (terminal_type_id, vehicle_id, id) values (?, ?, ?)
+Hibernate: insert into tickets (issue_terminal_id, token_id, id) values (?, ?, ?)
+Hibernate: insert into prepaid_rides (balance, ticket_id) values (?, ?)
+Hibernate: update tickets set token_id=? where id=?
+Hibernate: update tickets set token_id=? where id=?
+======================================================================
+Hibernate: select this_.id as id1_6_0_, this_.issue_terminal_id as issue_te3_6_0_, this_.token_id as token_id2_6_0_, this_1_.balance as balance1_1_0_, this_2_.trip_id as trip_id2_0_0_, case when this_1_.ticket_id is not null then 1 when this_2_.ticket_id is not null then 2 when this_.id is not null then 0 end as clazz_0_ from tickets this_ left outer join prepaid_rides this_1_ on this_.id=this_1_.ticket_id left outer join one_timers this_2_ on this_.id=this_2_.ticket_id
+Hibernate: select terminal0_.id as id1_5_0_, terminal0_.terminal_type_id as terminal2_5_0_, terminal0_.vehicle_id as vehicle_3_5_0_, terminalty1_.id as id1_4_1_, terminalty1_.name as name2_4_1_, vehicle2_.id as id1_11_2_, vehicle2_.car_code as car_code2_11_2_, vehicle2_.route_id as route_id3_11_2_, route3_.id as id1_3_3_, route3_.code as code2_3_3_, route3_.name as name3_3_3_, route3_.transport_type_id as transpor4_3_3_, transportt4_.id as id1_9_4_, transportt4_.code as code2_9_4_, transportt4_.name as name3_9_4_, trips5_.vehicle_id as vehicle_3_11_5_, trips5_.id as id1_10_5_, trips5_.id as id1_10_6_, trips5_.is_ongoing as is_ongoi2_10_6_, trips5_.vehicle_id as vehicle_3_10_6_ from terminals terminal0_ left outer join terminal_types terminalty1_ on terminal0_.terminal_type_id=terminalty1_.id left outer join vehicles vehicle2_ on terminal0_.vehicle_id=vehicle2_.id left outer join routes route3_ on vehicle2_.route_id=route3_.id left outer join transport_types transportt4_ on route3_.transport_type_id=transportt4_.id left outer join trips trips5_ on vehicle2_.id=trips5_.vehicle_id and ( trips5_.is_ongoing = 1)  where terminal0_.id=?
+PrepaidRideTicket{balance=78 Ticket{id=1, issueTerminal=Terminal{id=1, vehicles=Vehicle{id=1, carCode='Abus-0001', route=Route{id=1, code='A1', name='Oceania - Eurasia', transportType=TransportType{id=1, code='A', name='Bus'}}}, terminalType=TerminalType{id=1, name='Trip Registrator'}}, tokenId=1}}
+PrepaidRideTicket{balance=42 Ticket{id=2, issueTerminal=Terminal{id=1, vehicles=Vehicle{id=1, carCode='Abus-0001', route=Route{id=1, code='A1', name='Oceania - Eurasia', transportType=TransportType{id=1, code='A', name='Bus'}}}, terminalType=TerminalType{id=1, name='Trip Registrator'}}, tokenId=2}}
+OneTimeTicket{trips=Trip{id=100, vehicleId=100, isOngoing=true} Ticket{id=100, issueTerminal=Terminal{id=100, vehicles=Vehicle{id=101, carCode='66021', route=Route{id=101, code='123A', name='A - B', transportType=TransportType{id=1, code='A', name='Bus'}}}, terminalType=TerminalType{id=1, name='Trip Registrator'}}, tokenId=100}}
+PrepaidRideTicket{balance=42 Ticket{id=101, issueTerminal=Terminal{id=101, vehicles=Vehicle{id=102, carCode='99807', route=Route{id=102, code='123A', name='A - B', transportType=TransportType{id=1, code='A', name='Bus'}}}, terminalType=TerminalType{id=1, name='Trip Registrator'}}, tokenId=100}}
+======================================================================
+[OneTimeTicket{trips=Trip{id=100, vehicleId=100, isOngoing=true} Ticket{id=100, issueTerminal=Terminal{id=100, vehicles=Vehicle{id=101, carCode='66021', route=Route{id=101, code='123A', name='A - B', transportType=TransportType{id=1, code='A', name='Bus'}}}, terminalType=TerminalType{id=1, name='Trip Registrator'}}, tokenId=100}}, PrepaidRideTicket{balance=42 Ticket{id=101, issueTerminal=Terminal{id=101, vehicles=Vehicle{id=102, carCode='99807', route=Route{id=102, code='123A', name='A - B', transportType=TransportType{id=1, code='A', name='Bus'}}}, terminalType=TerminalType{id=1, name='Trip Registrator'}}, tokenId=100}}]
+2016-11-07 02:46:14.334  INFO 31659 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test context [DefaultTestContext@2ceb1e6d testClass = TicketDAOImplTest, testInstance = lv.javaguru.java3.databasetmp.TicketDAOImplTest@1aa16709, testMethod = test@TicketDAOImplTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@380d90a testClass = TicketDAOImplTest, locations = '{}', classes = '{class lv.javaguru.java3.config.CoreConfig}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.boot.test.SpringApplicationContextLoader', parent = [null]]].
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

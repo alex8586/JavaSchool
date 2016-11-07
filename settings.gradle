@@ -1,1 +1,1 @@
-include 'api' , 'core' , 'java3server'
+include ':api' , ':core' , ':java3server' , ':termy'

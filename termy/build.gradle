@@ -1,0 +1,25 @@
+group 'java3'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.7
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+ext{
+    feignCoreVersion = '8.12.1'
+    feignJaksonVersion = '8.12.1'
+    feignJaxrsVersion = '8.12.1'
+}
+
+dependencies {
+    compile project(":api")
+    compile "com.netflix.feign:feign-core:$feignCoreVersion"
+    compile "com.netflix.feign:feign-jackson:$feignJaksonVersion"
+    compile "com.netflix.feign:feign-jaxrs:$feignJaxrsVersion"
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class lv.javaguru.java3.databasetmp.VehicleDAOImplTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class lv.javaguru.java3.databasetmp.VehicleDAOImplTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/lv.javaguru.java3.databasetmp.html">lv.javaguru.java3.databasetmp</a> &gt; VehicleDAOImplTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.004s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">test</td>
+<td>0.004s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2016-11-07 02:46:14.335  INFO 31659 --- [    Test worker] o.s.t.c.s.DefaultTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2016-11-07 02:46:14.336  INFO 31659 --- [    Test worker] o.s.t.c.s.DefaultTestContextBootstrapper : Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2016-11-07 02:46:14.336  INFO 31659 --- [    Test worker] o.s.t.c.s.DefaultTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@47e29236, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1a9a3816, org.springframework.test.context.transaction.TransactionalTestExecutionListener@760b0a8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@724933c]
+2016-11-07 02:46:14.342  INFO 31659 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@1df20c78 testClass = VehicleDAOImplTest, testInstance = lv.javaguru.java3.databasetmp.VehicleDAOImplTest@3eecd189, testMethod = test@VehicleDAOImplTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@4c8cf62a testClass = VehicleDAOImplTest, locations = '{}', classes = '{class lv.javaguru.java3.config.CoreConfig}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.boot.test.SpringApplicationContextLoader', parent = [null]]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@2464e9]; rollback [true]
+Hibernate: select vehicle0_.id as id1_11_0_, vehicle0_.car_code as car_code2_11_0_, vehicle0_.route_id as route_id3_11_0_, route1_.id as id1_3_1_, route1_.code as code2_3_1_, route1_.name as name3_3_1_, route1_.transport_type_id as transpor4_3_1_, transportt2_.id as id1_9_2_, transportt2_.code as code2_9_2_, transportt2_.name as name3_9_2_, trips3_.vehicle_id as vehicle_3_11_3_, trips3_.id as id1_10_3_, trips3_.id as id1_10_4_, trips3_.is_ongoing as is_ongoi2_10_4_, trips3_.vehicle_id as vehicle_3_10_4_ from vehicles vehicle0_ left outer join routes route1_ on vehicle0_.route_id=route1_.id left outer join transport_types transportt2_ on route1_.transport_type_id=transportt2_.id left outer join trips trips3_ on vehicle0_.id=trips3_.vehicle_id and ( trips3_.is_ongoing = 1)  where vehicle0_.id=?
+Vehicle{id=1, carCode='Abus-0001', route=Route{id=1, code='A1', name='Oceania - Eurasia', transportType=TransportType{id=1, code='A', name='Bus'}}}
+Route{id=1, code='A1', name='Oceania - Eurasia', transportType=TransportType{id=1, code='A', name='Bus'}}
+Trip{id=2, vehicleId=1, isOngoing=true}
+2016-11-07 02:46:14.345  INFO 31659 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test context [DefaultTestContext@1df20c78 testClass = VehicleDAOImplTest, testInstance = lv.javaguru.java3.databasetmp.VehicleDAOImplTest@3eecd189, testMethod = test@VehicleDAOImplTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@4c8cf62a testClass = VehicleDAOImplTest, locations = '{}', classes = '{class lv.javaguru.java3.config.CoreConfig}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.boot.test.SpringApplicationContextLoader', parent = [null]]].
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 2.13</a> at 07.11.2016 2:46:14</p>
+</div>
+</div>
+</body>
+</html>

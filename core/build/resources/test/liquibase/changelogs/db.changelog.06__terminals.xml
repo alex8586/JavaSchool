@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+
+    <changeSet id="1" author="alex" context="main">
+        <createTable tableName="terminals">
+            <column name="id" type="BIGINT" autoIncrement="true" startWith="1">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+
+            <column name="vehicle_id" type="BIGINT">
+                <constraints  nullable="true"/>
+            </column>
+
+            <column name="terminal_type_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2" author="alex" >
+        <addForeignKeyConstraint baseColumnNames="vehicle_id"
+                                 baseTableName="terminals"
+                                 constraintName="fk_terminal_on_vehicle"
+                                 onDelete="RESTRICT"
+                                 onUpdate="RESTRICT"
+                                 referencedColumnNames="id"
+                                 referencedTableName="vehicles"/>
+    </changeSet>
+
+    <changeSet id="3" author="alex" >
+        <addForeignKeyConstraint baseColumnNames="terminal_type_id"
+                                 baseTableName="terminals"
+                                 constraintName="fk_terminal_on_terminal_type"
+                                 onDelete="RESTRICT"
+                                 onUpdate="RESTRICT"
+                                 referencedColumnNames="id"
+                                 referencedTableName="terminal_types"/>
+    </changeSet>
+
+    <changeSet id="4" author="alex">
+
+        <insert tableName="terminals">
+            <column name="vehicle_id">1</column>
+            <column name="terminal_type_id">1</column>
+        </insert>
+        <insert tableName="terminals">
+            <column name="vehicle_id">1</column>
+            <column name="terminal_type_id">3</column>
+        </insert>
+
+        <insert tableName="terminals">
+            <column name="vehicle_id">2</column>
+            <column name="terminal_type_id">1</column>
+        </insert>
+        <insert tableName="terminals">
+            <column name="vehicle_id">2</column>
+            <column name="terminal_type_id">3</column>
+        </insert>
+
+        <insert tableName="terminals">
+            <column name="vehicle_id">null</column>
+            <column name="terminal_type_id">2</column>
+        </insert>
+
+    </changeSet>
+
+    <changeSet id="5" author="alex">
+        <createSequence sequenceName="terminals_sec" startValue="100"/>
+    </changeSet>
+
+</databaseChangeLog>
