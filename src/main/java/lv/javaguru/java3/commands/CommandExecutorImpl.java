@@ -5,6 +5,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.PostConstruct;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,11 +23,16 @@ class CommandExecutorImpl implements CommandExecutor {
         commandServiceMap = new HashMap<>();
         if(services != null && !services.isEmpty()) {
             for (DomainCommandHandler service : services) {
-                Class domainCommandClass = service.getClass();
+                Class domainCommandClass =  getGenericParameter(service.getClass());
                 commandServiceMap.put(domainCommandClass, service);
-                System.out.println("Registring domain command : " + service);
+                System.out.println("Registring domain command for: " + service + " :" + domainCommandClass);
             }
         }
+    }
+
+    private Class getGenericParameter(Class clazz){
+        ParameterizedType parameterizedType = (ParameterizedType) clazz.getGenericInterfaces()[0];
+        return (Class) parameterizedType.getActualTypeArguments()[0];
     }
 
     @Transactional()

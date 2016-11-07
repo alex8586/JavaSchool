@@ -19,4 +19,5 @@ public class CreateVehicleCommand implements DomainCommand<CreateVehicleResult> 
     public long getRouteId() {
         return routeId;
     }
+
 }
