@@ -1,43 +1,4 @@
 
-group 'java3'
-version '1.0-SNAPSHOT'
-apply plugin: 'java'
-apply plugin: 'idea'
-apply plugin: 'war'
-sourceCompatibility = 1.8
-
-repositories {
-    mavenCentral()
-    jcenter()
-}
-
-ext {
-    liquidbaseCoreVersion = '3.2.2'
-    javaxWsRsVersion = "2.0.1"
-    springBootStarterJersey = '1.2.7.RELEASE'
-    jaksonCoreVersion = '2.6.3'
-    jaksonDatabindVersion = '2.6.3'
-    feignCoreVersion = '8.12.1'
-    feignJaksonVersion = '8.12.1'
-    feignJaxrsVersion = '8.12.1'
-    junitVersion = '4.11'
-    mockitoVersion = '1.9.5'
-    springBootStarterTestVersion = '1.2.7.RELEASE'
-}
-
-dependencies {
-    compile project(":api")
-    compile project(":core")
-
-    compile "org.springframework.boot:spring-boot-starter-jersey:$springBootStarterJersey"
-
-    testCompile "com.netflix.feign:feign-core:$feignCoreVersion"
-    testCompile "com.netflix.feign:feign-jackson:$feignJaksonVersion"
-    testCompile "com.netflix.feign:feign-jaxrs:$feignJaxrsVersion"
-    testCompile "junit:junit:$junitVersion"
-    testCompile "org.mockito:mockito-all:$mockitoVersion"
-    testCompile "org.springframework.boot:spring-boot-starter-test:$springBootStarterTestVersion"
-}
 
 
 
