@@ -1,8 +1,8 @@
 package lv.javaguru.java3.services.tickets.tickets;
 
-import lv.javaguru.java3.core.domain.Terminal;
-import lv.javaguru.java3.core.domain.Trip;
-import lv.javaguru.java3.core.domain.tickets.OneTimeTicket;
+import lv.javaguru.java3.domain.terminals.Terminal;
+import lv.javaguru.java3.domain.tickets.OneTimeTicket;
+import lv.javaguru.java3.domain.trips.Trip;
 
 public interface OneTimeTicketFactory {
 

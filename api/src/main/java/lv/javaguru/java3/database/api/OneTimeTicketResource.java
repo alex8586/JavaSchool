@@ -1,7 +1,7 @@
 package lv.javaguru.java3.database.api;
 
-import lv.javaguru.java3.integrations.rest.dto.OneTimeTicketDTO;
-import lv.javaguru.java3.integrations.rest.dto.TerminalDTO;
+import lv.javaguru.java3.dto.OneTimeTicketDTO;
+import lv.javaguru.java3.dto.TerminalDTO;
 
 import javax.ws.rs.*;
 

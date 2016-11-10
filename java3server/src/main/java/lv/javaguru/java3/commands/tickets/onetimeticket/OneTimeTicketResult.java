@@ -1,9 +1,9 @@
 package lv.javaguru.java3.commands.tickets.onetimeticket;
 
-import lv.javaguru.java3.core.commands.DomainCommandResult;
-import lv.javaguru.java3.integrations.rest.dto.OneTimeTicketDTO;
+import lv.javaguru.java3.commands.DomainCommandResult;
+import lv.javaguru.java3.dto.OneTimeTicketDTO;
 
-public class OneTimeTicketResult implements DomainCommandResult{
+public class OneTimeTicketResult implements DomainCommandResult {
 
     private OneTimeTicketDTO oneTimeTicketDTO;
 

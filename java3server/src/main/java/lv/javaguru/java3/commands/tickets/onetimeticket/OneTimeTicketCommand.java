@@ -1,6 +1,6 @@
 package lv.javaguru.java3.commands.tickets.onetimeticket;
 
-import lv.javaguru.java3.core.commands.DomainCommand;
+import lv.javaguru.java3.commands.DomainCommand;
 
 public class OneTimeTicketCommand implements DomainCommand<OneTimeTicketResult> {
 

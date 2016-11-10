@@ -1,5 +1,8 @@
 package lv.javaguru.java3.dto.builders;
 
+import lv.javaguru.java3.dto.OneTimeTicketDTO;
+import lv.javaguru.java3.dto.TripDTO;
+
 public class OneTimeTicketDTOBuilder {
 
     private Long id;

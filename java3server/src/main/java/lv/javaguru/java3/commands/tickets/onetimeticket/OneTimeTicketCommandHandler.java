@@ -1,19 +1,19 @@
 package lv.javaguru.java3.commands.tickets.onetimeticket;
 
-import lv.javaguru.java3.core.domain.Terminal;
-import lv.javaguru.java3.core.domain.Trip;
-import lv.javaguru.java3.core.domain.Vehicle;
-import lv.javaguru.java3.core.domain.tickets.OneTimeTicket;
-import lv.javaguru.java3.core.domain.tickets.Ticket;
-import lv.javaguru.java3.core.domain.tickets.Token;
-import lv.javaguru.java3.core.domain.tickets.TokenType;
-import lv.javaguru.java3.core.services.DomainCommandHandler;
-import lv.javaguru.java3.core.services.terminal.TerminalService;
-import lv.javaguru.java3.core.services.tickets.OneTimeTicketFactory;
-import lv.javaguru.java3.core.services.token.TokenFactory;
-import lv.javaguru.java3.core.services.token.TokenService;
-import lv.javaguru.java3.core.services.token_type.TokenTypeService;
-import lv.javaguru.java3.integrations.rest.dto.OneTimeTicketDTO;
+import lv.javaguru.java3.commands.DomainCommandHandler;
+import lv.javaguru.java3.domain.terminals.Terminal;
+import lv.javaguru.java3.domain.tickets.OneTimeTicket;
+import lv.javaguru.java3.domain.tickets.Ticket;
+import lv.javaguru.java3.domain.tickets.Token;
+import lv.javaguru.java3.domain.tickets.TokenType;
+import lv.javaguru.java3.domain.trips.Trip;
+import lv.javaguru.java3.domain.vehicles.Vehicle;
+import lv.javaguru.java3.dto.OneTimeTicketDTO;
+import lv.javaguru.java3.services.terminals.terminals.TerminalService;
+import lv.javaguru.java3.services.tickets.tickets.OneTimeTicketFactory;
+import lv.javaguru.java3.services.tickets.token.TokenFactory;
+import lv.javaguru.java3.services.tickets.token.TokenService;
+import lv.javaguru.java3.services.tickets.token_type.TokenTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -22,7 +22,7 @@ import java.util.List;
 
 @Component
 public class OneTimeTicketCommandHandler
-        implements DomainCommandHandler <OneTimeTicketCommand, OneTimeTicketResult>{
+        implements DomainCommandHandler<OneTimeTicketCommand, OneTimeTicketResult> {
 
     @Autowired
     private TerminalService terminalService;
@@ -55,10 +55,5 @@ public class OneTimeTicketCommandHandler
 
         OneTimeTicketDTO oneTimeTicketDTO = oneTimeTicketConverter.convert(oneTimeTicket);
         return new OneTimeTicketResult(oneTimeTicketDTO);
-    }
-
-    @Override
-    public Class getCommandType() {
-        return OneTimeTicketCommand.class;
     }
 }
