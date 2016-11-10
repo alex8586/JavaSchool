@@ -12,7 +12,8 @@ import java.util.stream.Collectors;
 public class TransportTypeConverter {
 
     public TransportTypeDTO convert(TransportType transportType){
-        System.out.println(transportType);
+        if(transportType == null)
+            return null;
         return TransportTypeDTOBuilder.createTransportTypeDTO()
                 .withId(transportType.getId())
                 .withName(transportType.getName())

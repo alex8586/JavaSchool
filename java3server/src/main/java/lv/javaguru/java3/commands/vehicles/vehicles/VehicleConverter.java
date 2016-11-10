@@ -7,6 +7,7 @@ import lv.javaguru.java3.dto.builders.VehicleDTOBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.validation.constraints.Null;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -16,8 +17,9 @@ public class VehicleConverter {
     @Autowired
     RouteConverter routeConverter;
 
-    public VehicleDTO convert(Vehicle vehicle){
-        System.out.println(vehicle);
+    public VehicleDTO convert( Vehicle vehicle){
+        if(vehicle == null)
+            return null;
         return VehicleDTOBuilder.createVehicleDTO()
                 .withId(vehicle.getId())
                 .withCarCode(vehicle.getCarCode())
@@ -30,4 +32,5 @@ public class VehicleConverter {
                 .map(this::convert)
                 .collect(Collectors.toList());
     }
+
 }

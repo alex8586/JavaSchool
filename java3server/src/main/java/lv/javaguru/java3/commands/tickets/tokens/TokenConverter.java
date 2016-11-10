@@ -17,6 +17,8 @@ public class TokenConverter {
     private TokenTypeConverter tokenTypeConverter;
 
     public TokenDTO convert(Token token){
+        if(token == null)
+            return null;
         return createTokenDTO()
                 .withTokenTypeDTO(tokenTypeConverter.convert(token.getTokenType()))
                 .withDate(new Date())

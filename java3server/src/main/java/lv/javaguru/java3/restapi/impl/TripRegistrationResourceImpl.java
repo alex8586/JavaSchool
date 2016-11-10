@@ -23,7 +23,7 @@ public class TripRegistrationResourceImpl implements TripRegistrationResource {
     @GET
     @Consumes(APPLICATION_JSON)
     @Produces(APPLICATION_JSON)
-    @Path("/termin/{terminalId}/token/{tokenId}")
+    @Path("/terminals/{terminalId}/token/{tokenId}")
     public RideDTO registerTrip(@PathParam("terminalId") Long terminalId,
                                 @PathParam("tokenId") Long tokenId) {
         TripRegistrationCommand command = new TripRegistrationCommand(terminalId, tokenId);

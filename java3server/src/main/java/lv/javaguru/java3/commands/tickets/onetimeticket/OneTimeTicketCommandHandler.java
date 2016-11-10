@@ -6,6 +6,7 @@ import lv.javaguru.java3.domain.tickets.OneTimeTicket;
 import lv.javaguru.java3.domain.tickets.Ticket;
 import lv.javaguru.java3.domain.tickets.Token;
 import lv.javaguru.java3.domain.tickets.TokenType;
+import lv.javaguru.java3.domain.trips.Ride;
 import lv.javaguru.java3.domain.trips.Trip;
 import lv.javaguru.java3.domain.vehicles.Vehicle;
 import lv.javaguru.java3.dto.OneTimeTicketDTO;
@@ -14,6 +15,7 @@ import lv.javaguru.java3.services.tickets.tickets.OneTimeTicketFactory;
 import lv.javaguru.java3.services.tickets.token.TokenFactory;
 import lv.javaguru.java3.services.tickets.token.TokenService;
 import lv.javaguru.java3.services.tickets.token_type.TokenTypeService;
+import lv.javaguru.java3.services.trips.rides.RideFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -36,6 +38,8 @@ public class OneTimeTicketCommandHandler
     private OneTimeTicketFactory oneTimeTicketFactory;
     @Autowired
     private OneTimeTicketConverter oneTimeTicketConverter;
+    @Autowired
+    private RideFactory rideFactory;
 
     @Override
     public OneTimeTicketResult execute(OneTimeTicketCommand command) {
@@ -46,12 +50,14 @@ public class OneTimeTicketCommandHandler
         TokenType tokenType = tokenTypeService.get(1L);
         List<Ticket> ticketList = new ArrayList<>();
         Token token = tokenFactory.create(tokenType, ticketList);
-
+        System.out.println("new token " + token );
         OneTimeTicket oneTimeTicket = oneTimeTicketFactory.create(currentTrip, terminal, token.getId());
 
         ticketList.add(oneTimeTicket);
         token.setTickets(ticketList);
         tokenService.update(token.getId(), tokenType, ticketList);
+
+        Ride ride = rideFactory.create(currentTrip,token);
 
         OneTimeTicketDTO oneTimeTicketDTO = oneTimeTicketConverter.convert(oneTimeTicket);
         return new OneTimeTicketResult(oneTimeTicketDTO);

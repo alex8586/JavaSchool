@@ -15,6 +15,8 @@ public class RideConverter {
     TokenConverter tokenConverter;
 
     public RideDTO convert(Ride ride){
+        if(ride == null)
+            return null;
         return createRideDTO()
                 .withId(ride.getId())
                 .withTripId(ride.getTripId())

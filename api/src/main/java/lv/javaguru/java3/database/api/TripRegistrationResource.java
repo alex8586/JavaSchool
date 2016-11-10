@@ -9,7 +9,7 @@ public interface TripRegistrationResource {
     @GET
     @Consumes(APPLICATION_JSON)
     @Produces(APPLICATION_JSON)
-    @Path("/termin/{terminalId}/token/{tokenId}")
+    @Path("/terminals/{terminalId}/token/{tokenId}")
     RideDTO registerTrip(@PathParam("terminalId") Long terminalId,
                          @PathParam("tokenId") Long tokenId);
 }

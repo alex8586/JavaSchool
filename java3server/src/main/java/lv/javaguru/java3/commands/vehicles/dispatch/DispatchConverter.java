@@ -16,7 +16,7 @@ public class DispatchConverter {
 
     public DispatchDTO convert(Trip oldTrip, Trip newTrip ) {
         TripDTO oldTripDTO = oldTrip == null ? null : tripConverter.convert(oldTrip);
-        TripDTO newTripDTO = tripConverter.convert(newTrip);
+        TripDTO newTripDTO = newTrip == null ? null : tripConverter.convert(newTrip);
         return DispatchDTOBuilder.createDispatchDTO()
                 .withOldTrip(oldTripDTO)
                 .withNewTrip(newTripDTO)

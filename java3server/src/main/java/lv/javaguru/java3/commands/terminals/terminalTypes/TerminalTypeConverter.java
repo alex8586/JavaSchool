@@ -9,11 +9,12 @@ import java.util.stream.Collectors;
 
 import static lv.javaguru.java3.dto.builders.TerminalTypeDTOBuilder.createTerminalTypeDTO;
 
-
 @Component
 public class TerminalTypeConverter {
 
     public TerminalTypeDTO convert(TerminalType terminalType){
+        if(terminalType == null)
+            return null;
         return createTerminalTypeDTO()
                 .withId(terminalType.getId())
                 .withName(terminalType.getName())

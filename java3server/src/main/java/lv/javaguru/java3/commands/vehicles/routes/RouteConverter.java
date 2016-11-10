@@ -17,6 +17,8 @@ public class RouteConverter {
     TransportTypeConverter transportTypeConverter;
 
     public RouteDTO convert(Route route){
+        if(route == null)
+            return null;
         return RouteDTOBuilder.createRouteDTO().
                 withId(route.getId()).
                 withCode(route.getCode()).

@@ -9,6 +9,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class TripConverter {
     public TripDTO convert(Trip trip ) {
+        if(trip == null)
+            return null;
         return TripDTOBuilder.createTripDTO()
                 .withId(trip.getId())
                 .withIsOngoing(trip.isOngoing())

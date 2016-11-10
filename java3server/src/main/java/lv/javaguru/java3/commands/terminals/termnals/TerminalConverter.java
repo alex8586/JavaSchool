@@ -21,6 +21,8 @@ public class TerminalConverter {
     TerminalTypeConverter terminalTypeConverter;
 
     public TerminalDTO convert(Terminal terminal){
+        if(terminal == null)
+            return null;
         return TerminalDTOBuilder.createTerminalDTO()
                 .withId(terminal.getId())
                 .withVehicleDTO(vehicleConverter.convert(terminal.getVehicle()))

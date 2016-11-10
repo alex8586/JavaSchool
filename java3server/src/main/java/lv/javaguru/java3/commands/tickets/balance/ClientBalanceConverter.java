@@ -10,6 +10,8 @@ import static lv.javaguru.java3.dto.builders.PrepaidRideTicketDTOBuilder.createP
 public class ClientBalanceConverter {
 
     public PrepaidRideTicketDTO convert(PrepaidRideTicket prepaidRideTicket){
+        if(prepaidRideTicket == null)
+            return null;
         return createPrepaidRideTicket()
                 .withBalance(prepaidRideTicket.getBalance())
                 .build();

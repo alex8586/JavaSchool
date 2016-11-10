@@ -17,10 +17,12 @@ public class OneTimeTicketConverter {
     private TripConverter tripConverter;
 
     public OneTimeTicketDTO convert(OneTimeTicket oneTimeTicket){
-        TripDTO tripDTO = tripConverter.convert(oneTimeTicket.getTrip());
+        if(oneTimeTicket == null)
+            return null;
+
         return createOneTimeTicketDTO()
                 .withId(oneTimeTicket.getId())
-                .withTrip(tripDTO)
+                .withTrip(tripConverter.convert(oneTimeTicket.getTrip()))
                 .build();
     }
 }
