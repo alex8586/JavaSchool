@@ -12,6 +12,10 @@
                 <constraints primaryKey="true" nullable="false" />
             </column>
 
+            <column name="version" type="BIGINT"  startWith="1" defaultValue="1">
+                <constraints  nullable="false"/>
+            </column>
+
             <column name="token_type_id" type="BIGINT">
                 <constraints  nullable="false"/>
             </column>

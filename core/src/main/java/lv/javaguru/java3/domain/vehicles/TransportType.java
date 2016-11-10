@@ -1,30 +1,19 @@
 package lv.javaguru.java3.domain.vehicles;
 
+import lv.javaguru.java3.domain.BaseEntity;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name="transport_types")
-public class TransportType {
-
-    @Id
-    @GeneratedValue(generator = "transport_types_seq", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "transport_types_seq", sequenceName = "transport_types_seq", allocationSize = 1)
-    @Column(name="id", nullable = false)
-    private Long id;
+@SequenceGenerator(name = "base_generator", sequenceName = "transport_types_seq", allocationSize = 1)
+public class TransportType extends BaseEntity {
 
     @Column(name="code", nullable = false)
     private String code;
 
     @Column(name="name", nullable = false)
     private String name;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getCode() {
         return code;

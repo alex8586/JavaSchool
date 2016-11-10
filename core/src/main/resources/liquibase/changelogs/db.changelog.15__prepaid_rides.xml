@@ -13,6 +13,10 @@
                 <constraints primaryKey="true" nullable="false" />
             </column>
 
+            <column name="version" type="BIGINT"  startWith="1" defaultValue="1">
+                <constraints  nullable="false"/>
+            </column>
+
             <column name="balance" type="INTEGER" defaultValue="0">
                 <constraints nullable="false"/>
             </column>

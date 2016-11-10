@@ -1,15 +1,13 @@
 package lv.javaguru.java3.domain.vehicles;
 
+import lv.javaguru.java3.domain.BaseEntity;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name="routes")
-public class Route {
-    @Id
-    @GeneratedValue(generator = "routes_seq", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "routes_seq", sequenceName = "routes_seq", allocationSize = 1)
-    @Column(name="id", nullable = false)
-    private Long id;
+@SequenceGenerator(name = "base_generator", sequenceName = "routes_seq", allocationSize = 1)
+public class Route extends BaseEntity{
 
     @Column(name="code", nullable = false)
     private String code;
@@ -19,14 +17,6 @@ public class Route {
 
     @ManyToOne(fetch = FetchType.EAGER)
     private TransportType transportType;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getCode() {
         return code;
