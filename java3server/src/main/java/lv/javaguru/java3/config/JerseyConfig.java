@@ -17,6 +17,7 @@ class JerseyConfig extends ResourceConfig {
         register(DispatchResourceImpl.class);
         register(ClientBalanceResourceImpl.class);
         register(TripRegistrationResourceImpl.class);
+        register(OneTimeTicketResourceImpl.class);
         register(TripControlResourceImpl.class);
     }
 }

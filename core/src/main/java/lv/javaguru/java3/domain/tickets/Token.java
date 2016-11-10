@@ -22,8 +22,6 @@ public class Token {
     @JoinColumn(name = "token_id")
     private List<Ticket> tickets = new ArrayList<Ticket>();
 
-    private Long tripId;
-
     public List<Ticket> getTickets() {
         return tickets;
     }
@@ -50,21 +48,12 @@ public class Token {
         this.tokenType = tokenType;
     }
 
-    public Long getTripId() {
-        return tripId;
-    }
-
-    public void setTripId(Long tripId) {
-        this.tripId = tripId;
-    }
-
     @Override
     public String toString() {
         return "Token{" +
                 "id=" + id +
                 ", tokenType=" + tokenType +
                 ", tickets=" + tickets +
-                ", tripId=" + tripId +
                 '}';
     }
 }

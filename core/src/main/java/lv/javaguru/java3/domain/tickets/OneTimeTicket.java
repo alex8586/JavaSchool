@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class OneTimeTicket extends Ticket{
 
     @ManyToOne(fetch = FetchType.LAZY)
-    Trip trip;
+    private Trip trip;
 
     public Trip getTrip() {
         return trip;
