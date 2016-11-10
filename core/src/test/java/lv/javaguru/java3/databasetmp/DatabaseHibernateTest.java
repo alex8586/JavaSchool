@@ -1,6 +1,6 @@
 package lv.javaguru.java3.databasetmp;
 
-import lv.javaguru.java3.CRUDOperationDAO;
+import lv.javaguru.java3.database.CRUDOperationDAO;
 import lv.javaguru.java3.config.CoreConfig;
 import org.hibernate.SessionFactory;
 import org.junit.Ignore;

@@ -1,8 +1,10 @@
-package lv.javaguru.java3;
+package lv.javaguru.java3.database;
+
+import lv.javaguru.java3.domain.BaseEntity;
 
 import java.util.List;
 
-public interface CRUDOperationDAO<E, K> {
+public interface CRUDOperationDAO<E extends BaseEntity, K> {
 
     void create(E entity);
 

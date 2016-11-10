@@ -1,7 +1,7 @@
 package lv.javaguru.java3.database.impl.tickets;
 
 
-import lv.javaguru.java3.CRUDOperationDAOImpl;
+import lv.javaguru.java3.database.CRUDOperationDAOImpl;
 import lv.javaguru.java3.database.api.tickets.TicketDAO;
 import lv.javaguru.java3.domain.tickets.Ticket;
 import org.springframework.stereotype.Component;

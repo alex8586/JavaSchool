@@ -53,8 +53,4 @@
         <createSequence sequenceName="rides_seq" startValue="100"/>
     </changeSet>
 
-    <changeSet id="5" author="algis" context="main">
-        <createSequence sequenceName="whatafuck" startValue="100"/>
-    </changeSet>
-
 </databaseChangeLog>
