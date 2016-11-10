@@ -1,4 +1,4 @@
-rootProject.name = 'termy'
+rootProject.name = 'terminal'
 
 include ':api'
 project(':api').projectDir = new File('../api')
