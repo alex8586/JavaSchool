@@ -10,16 +10,21 @@ public class BaseEntity {
     @Column(name="id", nullable = false)
     protected Long id;
 
+    @Version
+    @Column(name = "version")
+    private Long version;
+
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
 
-    @Column(name = "version")
-    @Version
-    private Long version;
-
+    public Long getVersion() {
+        return version;
+    }
+    public void setVersion(Long version) {
+        this.version = version;
+    }
 }

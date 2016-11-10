@@ -12,6 +12,10 @@
                 <constraints primaryKey="true" nullable="false" />
             </column>
 
+            <column name="version" type="BIGINT"  startWith="1" defaultValue="1">
+                <constraints  nullable="false"/>
+            </column>
+
             <column name="trip_id" type="BIGINT" defaultValue="0">
                 <constraints nullable="false"/>
             </column>

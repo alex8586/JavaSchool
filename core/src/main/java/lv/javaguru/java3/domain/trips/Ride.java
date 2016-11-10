@@ -1,5 +1,6 @@
 package lv.javaguru.java3.domain.trips;
 
+import lv.javaguru.java3.domain.BaseEntity;
 import lv.javaguru.java3.domain.tickets.Token;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
@@ -8,13 +9,8 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="rides")
-public class Ride {
-
-    @Id
-    @GeneratedValue(generator = "rides_seq", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "rides_seq", sequenceName = "rides_seq", allocationSize = 1)
-    @Column(name="id", nullable = false)
-    private Long id;
+@SequenceGenerator(name = "base_generator", sequenceName = "rides_seq", allocationSize = 1)
+public class Ride extends BaseEntity{
 
     @Column(name="trip_id")
     private Long tripId;
@@ -22,13 +18,6 @@ public class Ride {
     @ManyToOne(fetch = FetchType.EAGER)
     @Fetch(FetchMode.JOIN)
     private Token token;
-
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public Long getTripId() {
         return tripId;

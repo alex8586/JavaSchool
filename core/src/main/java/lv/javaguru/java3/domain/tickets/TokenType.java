@@ -1,27 +1,25 @@
 package lv.javaguru.java3.domain.tickets;
 
+import lv.javaguru.java3.domain.BaseEntity;
+
 import javax.persistence.*;
 
 
 @Entity
 @Table(name = "token_types")
-public class TokenType {
+@SequenceGenerator(name = "base_generator", sequenceName = "token_types_seq", allocationSize = 1)
+public class TokenType extends BaseEntity {
 
-    @Id
-    @GeneratedValue(generator = "token_types_seq", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "token_types_seq", sequenceName = "token_types_seq", allocationSize = 1)
-    @Column(name="id", nullable = false)
-    private Long id;
 
     @Column(name = "name")
     String name;
 
-    public Long getId() {
-        return id;
-    }
-
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override

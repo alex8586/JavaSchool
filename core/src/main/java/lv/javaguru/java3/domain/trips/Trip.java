@@ -1,17 +1,14 @@
 package lv.javaguru.java3.domain.trips;
 
+import lv.javaguru.java3.domain.BaseEntity;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table(name="trips")
-public class Trip {
-
-    @Id
-    @GeneratedValue(generator = "trips_seq", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "trips_seq", sequenceName = "trips_seq", allocationSize = 1)
-    @Column(name="id", nullable = false)
-    private Long id;
+@SequenceGenerator(name = "base_generator", sequenceName = "trips_seq", allocationSize = 1)
+public class Trip extends BaseEntity{
 
     @Column(name = "is_ongoing")
     private boolean isOngoing = true;
@@ -22,14 +19,6 @@ public class Trip {
     @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "trip_id")
     private List<Ride> rides;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public boolean isOngoing() {
         return isOngoing;

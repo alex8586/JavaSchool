@@ -1,5 +1,6 @@
 package lv.javaguru.java3.domain.vehicles;
 
+import lv.javaguru.java3.domain.BaseEntity;
 import lv.javaguru.java3.domain.trips.Trip;
 import org.hibernate.annotations.Where;
 
@@ -8,13 +9,8 @@ import java.util.List;
 
 @Entity
 @Table(name = "vehicles")
-public class Vehicle {
-
-    @Id
-    @GeneratedValue(generator = "vehicle_seq", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "vehicle_seq", sequenceName = "vehicle_seq", allocationSize = 1)
-    @Column(name="id", nullable = false)
-    private Long id;
+@SequenceGenerator(name = "base_generator", sequenceName = "vehicle_seq", allocationSize = 1)
+public class Vehicle extends BaseEntity{
 
     @Column(name = "car_code", nullable = false)
     private String carCode;
@@ -26,14 +22,6 @@ public class Vehicle {
     @Where(clause = "is_ongoing = 1")
     @JoinColumn(name = "vehicle_id")
     private List<Trip> trips;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getCarCode() {
         return carCode;

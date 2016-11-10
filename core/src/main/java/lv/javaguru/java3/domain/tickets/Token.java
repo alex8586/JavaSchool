@@ -1,5 +1,7 @@
 package lv.javaguru.java3.domain.tickets;
 
+import lv.javaguru.java3.domain.BaseEntity;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,13 +9,8 @@ import java.util.List;
 
 @Entity
 @Table(name="tokens")
-public class Token {
-
-    @Id
-    @GeneratedValue(generator = "tokens_seq", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "tokens_seq", sequenceName = "tokens_seq", allocationSize = 1)
-    @Column(name="id", nullable = false)
-    private Long id;
+@SequenceGenerator(name = "base_generator", sequenceName = "tokens_seq", allocationSize = 1)
+public class Token extends BaseEntity{
 
     @ManyToOne(fetch = FetchType.EAGER)
     private TokenType tokenType;
@@ -30,14 +27,6 @@ public class Token {
     }
     public void addTicket(Ticket ticket){
         this.tickets.add(ticket);
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public TokenType getTokenType() {
