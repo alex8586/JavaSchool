@@ -2,31 +2,16 @@ package lv.javaguru.java3.services.terminals.terminal_type;
 
 import lv.javaguru.java3.database.api.termnals.TerminalTypeDAO;
 import lv.javaguru.java3.domain.terminals.TerminalType;
-import org.springframework.beans.factory.annotation.Autowired;
+import lv.javaguru.java3.services.CoreOperationServiceImpl;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
-
 @Component
-public class TerminalTypeServiceImpl implements TerminalTypeService {
-
-    @Autowired
-    private TerminalTypeDAO terminalTypeDAO;
+public class TerminalTypeServiceImpl extends CoreOperationServiceImpl<TerminalType,Long,TerminalTypeDAO> implements TerminalTypeService {
 
     @Override
     public TerminalType update(Long id, String name) {
-        TerminalType terminalType = get(id);
+        TerminalType terminalType = this.get(id);
         terminalType.setName(name);
         return terminalType;
-    }
-
-    @Override
-    public TerminalType get(Long id) {
-        return terminalTypeDAO.getRequired(id);
-    }
-
-    @Override
-    public List<TerminalType> getAll() {
-        return terminalTypeDAO.getAll();
     }
 }

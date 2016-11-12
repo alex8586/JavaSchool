@@ -4,28 +4,21 @@ import lv.javaguru.java3.database.api.tickets.TokenDAO;
 import lv.javaguru.java3.domain.tickets.Ticket;
 import lv.javaguru.java3.domain.tickets.Token;
 import lv.javaguru.java3.domain.tickets.TokenType;
-import org.springframework.beans.factory.annotation.Autowired;
+import lv.javaguru.java3.services.CoreOperationServiceImpl;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Component
-public class TokenServiceImpl implements TokenService {
-
-    @Autowired
-    private TokenDAO tokenDAO;
+public class TokenServiceImpl extends CoreOperationServiceImpl<Token,Long,TokenDAO> implements TokenService {
 
     @Override
     public Token update(Long tokenId, TokenType tokenType, List<Ticket> ticketList) {
         Token token = get(tokenId);
         token.setTokenType(tokenType);
         token.setTickets(ticketList);
-        tokenDAO.update(token);
+        dao.update(token);
         return token;
     }
 
-    @Override
-    public Token get(Long tokenId) {
-        return tokenDAO.getRequired(tokenId);
-    }
 }
