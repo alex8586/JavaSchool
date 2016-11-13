@@ -1,1 +1,1 @@
-include ':api' , ':core' , ':java3server' , ':terminal'
+include ':api' , ':core' , ':java3server' , ':terminal' , 'commander'

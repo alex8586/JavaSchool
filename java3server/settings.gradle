@@ -3,3 +3,5 @@ include ':api'
 project(':api').projectDir = new File('../api')
 include ':core'
 project(':core').projectDir = new File('../core')
+include ':commander'
+project(':commander').projectDir = new File('../commander')

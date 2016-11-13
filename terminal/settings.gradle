@@ -2,4 +2,6 @@ rootProject.name = 'terminal'
 
 include ':api'
 project(':api').projectDir = new File('../api')
+include ':commander'
+project(':commander').projectDir = new File('../commander')
 

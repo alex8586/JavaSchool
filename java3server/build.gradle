@@ -12,11 +12,9 @@ repositories {
 }
 
 ext {
-    liquidbaseCoreVersion = '3.2.2'
-    javaxWsRsVersion = "2.0.1"
+
     springBootStarterJersey = '1.2.7.RELEASE'
-    jaksonCoreVersion = '2.6.3'
-    jaksonDatabindVersion = '2.6.3'
+
     feignCoreVersion = '8.12.1'
     feignJaksonVersion = '8.12.1'
     feignJaxrsVersion = '8.12.1'
@@ -28,6 +26,7 @@ ext {
 dependencies {
     compile project(":api")
     compile project(":core")
+    compile project(":commander")
 
     compile "org.springframework.boot:spring-boot-starter-jersey:$springBootStarterJersey"
 

@@ -3,9 +3,7 @@ package lv.javaguru.java3.services;
 import lv.javaguru.java3.database.CRUDOperationDAO;
 import lv.javaguru.java3.domain.BaseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.List;
-
 
 public abstract class CoreOperationServiceImpl<E extends BaseEntity,K , D extends CRUDOperationDAO<E,K>>
                                      implements CoreOperationService<E, K, D> {
