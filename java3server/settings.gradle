@@ -1,4 +1,4 @@
-rootProject.name = 'java3server'
+rootProject.name = 'app'
 include ':api'
 project(':api').projectDir = new File('../api')
 include ':core'
